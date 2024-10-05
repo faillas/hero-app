@@ -1,0 +1,106 @@
+{
+  "aggiorna": "Actualizar",
+  "aggiungi": "AÑADIR",
+  "aggiungiUnaNota": "Añadir una nota",
+  "albergo": "Hotel",
+  "annulla": "Cancelar",
+  "auto": "Coche",
+  "autobus": "Autobús",
+  
+  "bacheca": "TABLÓN",
+  "benvenutoIn": "Bienvenido a",
+  "budget": "Presupuesto",
+  "budgets": "Presupuestos",
+  
+  "categoria": "Categoría",
+  "categorie": "Categorías",
+  "creaUnaBachecaVirtuale": "Crea un tablón virtual para anotar todo lo que te pueda ser útil",
+  "creaUnaLista": "Crea una lista de cosas para hacer antes y después de tus viajes",
+  "conferma": "Confirmar",
+  "costi": "Costos",
+  
+  "dashboard": "Tablero",
+  "dark": "Oscuro",
+  "data": "Fecha",
+  "dataDiFine": "Fecha de fin",
+  "dataDiInizio": "Fecha de inicio",
+  "dataEOra": "Fecha y hora",
+  "dataInizioFine": "Fecha inicio - fin",
+  "descrizioneNota": "Descripción de la nota",
+  "dettaglioViaggio": "Detalle del viaje",
+  "doveVuoiAndare": "¿A dónde quieres ir?",
+  
+  "edit": "Editar",
+  
+  "elimina": "Eliminar",
+  "eliminaViaggio": "Eliminar viaje",
+  "erroreCaricamentoImmagine": "Error al cargar imagen",
+  
+  "graficoNonDisponibile": "Gráfico no disponible",
+  "galleria": "GALERÍA",
+  
+  "impostazioni": "Configuraciones",
+  "informazioni": "Información",
+  "itinerari": "Itinerarios",
+  
+  "light": "Claro",
+  
+  "mare": "Mar",
+  "metro": "Metro",
+  "modificaViaggio": "Modificar viaje",
+  "montagna": "Montaña",
+  "museo": "Museo",
+  
+  "nome": "Nombre",
+  "nonCiSonoBudget": "No hay presupuestos para este viaje",
+  "nonCiSonoBudgetRegistrati": "No hay presupuestos registrados para este viaje",
+  "nonCiSonoNote": "No hay notas registradas",
+  "nonCiSonoPianificazioni": "No hay planificaciones para este viaje",
+  "nonCiSonoPianificazioniRegistrate": "No hay planificaciones registradas para este viaje",
+  "nonCiSonoVociInWishlist": "No hay elementos registrados en la lista de deseos",
+  "nonRecuperarePianificazione": "No se pudo recuperar la planificación del viaje",
+  "nonSelezionata": "No seleccionada",
+  "nonCiSonoViaggiRegistrati": "No hay viajes registrados",
+  "note": "Notas",
+  "nuovoViaggio": "Nuevo viaje",
+  
+  "immagineNonDisponibile": "Imagen no disponible",
+  
+  "oraPuoiIniziare": "¡Ahora puedes empezar a registrar tus viajes!",
+  "orario": "Horario",
+  
+  "pagamento": "Pago",
+  "pasto": "Comida",
+  "pianificaNuoviViaggi": "Planifica nuevos viajes",
+  "pianificazioneGiornaliera": "Planificación diaria",
+  "pianificazioni": "Planificaciones",
+  "prezzo": "Precio",
+  "preventivo": "Estimación",
+  
+  "reportPDF": "INFORME PDF",
+  
+  "salva": "Guardar",
+  "scegliTemaApp": "Elige el tema de la aplicación",
+  "sicuroDiEliminareViaggio": "¿Estás seguro de que deseas eliminar el viaje? Todos los presupuestos y planificaciones asociados serán eliminados.",
+  "specificarePrezzoENome": "Especifica al menos el precio y el nombre",
+  "specificareDescrizione": "Especifica al menos la descripción",
+  "specificareDescrizioneEOrario": "Especifica al menos la descripción y la hora de inicio",
+  "specificareNomeEData": "Especifica al menos el nombre y la fecha de inicio y fin del viaje",
+  "speciale": "Especial",
+  "spesePerViaggio": "Gastos por viaje",
+  
+  "taxi": "Taxi",
+  "temaApplicazione": "Tema de la aplicación",
+  "timeline": "CRONOLOGÍA",
+  
+  "formatoImmagineNonSupportato": "Formato de imagen no soportado:",
+  
+  "vedi": "Ver",
+  "vediTuttiITuoiViaggi": "Ver todos tus viajes en una única cronología, tablón o galería",
+  "volo": "Vuelo",
+  "viaggi": "Viajes",
+  
+  "wishlist": "Lista de deseos",
+  
+  "potraiModificarloInSeguito": "(podrás modificarlo más tarde)"
+}

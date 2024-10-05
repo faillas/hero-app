@@ -1,0 +1,106 @@
+{
+  "aggiorna": "Update",
+  "aggiungi": "ADD",
+  "aggiungiUnaNota": "Add a note",
+  "albergo": "Hotel",
+  "annulla": "Cancel",
+  "auto": "Car",
+  "autobus": "Bus",
+  
+  "bacheca": "BOARD",
+  "benvenutoIn": "Welcome to",
+  "budget": "Budget",
+  "budgets": "Budgets",
+  
+  "categoria": "Category",
+  "categorie": "Categories",
+  "creaUnaBachecaVirtuale": "Create a virtual board to note down everything that may be useful to you",
+  "creaUnaLista": "Create a to-do list before and after your trips",
+  "conferma": "Confirm",
+  "costi": "Costs",
+  
+  "dark": "dark",
+  "dashboard": "dashboard",
+  "data": "Date",
+  "dataDiFine": "End date",
+  "dataDiInizio": "Start date",
+  "dataEOra": "Date and hour",
+  "dataInizioFine": "Start - End date",
+  "descrizioneNota": "Note description",
+  "dettaglioViaggio":"Travel Detail",
+  "doveVuoiAndare": "Where do you want to go?",
+  
+  "edit": "Edit",
+  "elimina": "Delete",
+  "eliminaViaggio": "Delete trip",
+  "erroreCaricamentoImmagine": "Error loading image",
+  
+  "graficoNonDisponibile": "Chart not available",
+  "galleria": "GALLERY",
+  
+  "impostazioni": "Settings",
+  "informazioni": "Information",
+  "itinerari": "Itineraries",
+
+  "light": "light",
+  
+  "mare": "Sea",
+  "metro": "Subway",
+  "modificaViaggio": "edit travel",
+  "montagna": "Mountain",
+  "museo": "Museum",
+
+  "nome": "Name",
+  "nonCiSonoBudget": "There are no budgets for this trip",
+  "nonCiSonoBudgetRegistrati": "There are no budgets recorded for this trip",
+  "nonCiSonoNote": "There are no notes recorded",
+  "nonCiSonoPianificazioni": "There are no plans for this trip",
+  "nonCiSonoPianificazioniRegistrate": "There are no plans recorded for this trip",
+  "nonCiSonoVociInWishlist": "There are no wishlist items recorded",
+  "nonRecuperarePianificazione": "Unable to retrieve trip plan",
+  "nonSelezionata": "Not selected",
+  "nonCiSonoViaggiRegistrati": "There are no trips recorded",
+  "note": "Notes",
+  "nuovoViaggio": "new travel",
+
+  "immagineNonDisponibile": "Image not available",
+  
+  "oraPuoiIniziare": "Now you can start recording your trips!",
+  "orario": "Time",
+  
+  "pagamento": "Payment",
+  "pasto": "Meal",
+  "pianificaNuoviViaggi": "Plan new trips",
+  "pianificazioneGiornaliera": "Daily planning",
+  "pianificazioni": "Plans",
+  "prezzo": "Price",
+  "preventivo": "Preventive",
+
+  
+  "reportPDF": "REPORT PDF",
+  
+  "salva": "Save",
+  "scegliTemaApp": "Choose the app theme",
+  "sicuroDiEliminareViaggio": "Are you sure you want to delete the trip? All associated budgets and plans will be deleted.",
+  "specificarePrezzoENome": "Specify at least the price and the name",
+  "specificareDescrizione": "Specify at least the description",
+  "specificareDescrizioneEOrario": "Specify at least the description and the start time",
+  "specificareNomeEData": "Specify at least the name and the start and end date of the trip",
+  "speciale": "Special",
+  "spesePerViaggio": "Expenses per trip",
+  
+  "taxi": "Taxi",
+  "temaApplicazione": "App theme",
+  "timeline": "TIMELINE",
+  
+  "formatoImmagineNonSupportato": "Unsupported image format:",
+  
+  "vedi": "See",
+  "vediTuttiITuoiViaggi": "See all your trips in a single timeline, board, or gallery",
+  "volo": "Flight",
+  "viaggi": "Trips",
+  
+  "wishlist": "Wishlist",
+  
+  "potraiModificarloInSeguito": "(you can modify it later)"
+}

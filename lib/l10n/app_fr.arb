@@ -1,0 +1,106 @@
+{
+  "aggiorna": "Mettre à jour",
+  "aggiungi": "AJOUTER",
+  "aggiungiUnaNota": "Ajouter une note",
+  "albergo": "Hôtel",
+  "annulla": "Annuler",
+  "auto": "Voiture",
+  "autobus": "Autobus",
+  
+  "bacheca": "TABLEAU",
+  "benvenutoIn": "Bienvenue dans",
+  "budget": "Budget",
+  "budgets": "Budgets",
+  
+  "categoria": "Catégorie",
+  "categorie": "Catégories",
+  "creaUnaBachecaVirtuale": "Créez un tableau virtuel pour noter tout ce qui pourrait vous être utile",
+  "creaUnaLista": "Créez une liste de choses à faire avant et après vos voyages",
+  "conferma": "Confirmer",
+  "costi": "Coûts",
+  
+  "dashboard": "tableau de bord",
+  "dark": "sombre",
+  "data": "Date",
+  "dataDiFine": "Date de fin",
+  "dataDiInizio": "Date de début",
+  "dataEOra": "Date et heure",
+  "dataInizioFine": "Date début - fin",
+  "descrizioneNota": "Description des remarques",
+  "dettaglioViaggio":"Détail du voyage",
+  "doveVuoiAndare": "Où voulez-vous aller?",
+  
+  "edit": "Modifier",
+  "elimina": "Supprimer",
+  "eliminaViaggio": "Supprimer le voyage",
+  "erroreCaricamentoImmagine": "Erreur lors du chargement de l'image",
+  
+  "graficoNonDisponibile": "Graphique non disponible",
+  "galleria": "GALERIE",
+  
+  "impostazioni": "Paramètres",
+  "informazioni": "Informations",
+  "itinerari": "Itinéraires",
+
+  "light": "lumière",
+  
+  "mare": "Mer",
+  "metro": "Métro",
+  "modificaViaggio": "modifier le voyage",
+  "montagna": "Montagne",
+  "museo": "Musée",
+  
+  "nome": "Nom",
+  "nonCiSonoBudget": "Il n'y a pas de budgets pour ce voyage",
+  "nonCiSonoBudgetRegistrati": "Il n'y a pas de budgets enregistrés pour ce voyage",
+  "nonCiSonoNote": "Il n'y a pas de notes enregistrées",
+  "nonCiSonoPianificazioni": "Il n'y a pas de planifications pour ce voyage",
+  "nonCiSonoPianificazioniRegistrate": "Il n'y a pas de planifications enregistrées pour ce voyage",
+  "nonCiSonoVociInWishlist": "Il n'y a pas d'éléments enregistrés dans la liste de souhaits",
+  "nonRecuperarePianificazione": "Impossible de récupérer la planification du voyage",
+  "nonSelezionata": "Non sélectionnée",
+  "nonCiSonoViaggiRegistrati": "Il n'y a pas de voyages enregistrés",
+  "note": "Notes",
+  "nuovoViaggio": "nouveau voyage",
+
+
+  "immagineNonDisponibile": "Image non disponible",
+  
+  "oraPuoiIniziare": "Vous pouvez maintenant commencer à enregistrer vos voyages!",
+  "orario": "Horaire",
+  
+  "pagamento": "Paiement",
+  "pasto": "Repas",
+  "pianificaNuoviViaggi": "Planifiez de nouveaux voyages",
+  "pianificazioneGiornaliera": "Planification quotidienne",
+  "pianificazioni": "Planifications",
+  "prezzo": "Prix",
+  "preventivo": "Préventif",
+
+  "reportPDF": "RAPPORT PDF",
+  
+  "salva": "Enregistrer",
+  "scegliTemaApp": "Choisissez le thème de l'application",
+  "sicuroDiEliminareViaggio": "Êtes-vous sûr de vouloir supprimer le voyage ? Tous les budgets et les planifications associés seront supprimés.",
+  "specificarePrezzoENome": "Veuillez spécifier au moins le prix et le nom",
+  "specificareDescrizione": "Veuillez spécifier au moins la description",
+  "specificareDescrizioneEOrario": "Veuillez spécifier au moins la description et l'heure de début",
+  "specificareNomeEData": "Veuillez spécifier au moins le nom et la date de début et de fin du voyage",
+  "speciale": "Spécial",
+  "spesePerViaggio": "Dépenses par voyage",
+  
+  "taxi": "Taxi",
+  "temaApplicazione": "Thème de l'application",
+  "timeline": "CHRONOLOGIE",
+  
+  "formatoImmagineNonSupportato": "Format d'image non supporté :",
+  
+  "vedi": "Voir",
+  "vediTuttiITuoiViaggi": "Voir tous vos voyages sur une seule chronologie, tableau ou galerie",
+  "volo": "Vol",
+  "viaggi": "Voyages",
+  
+  "wishlist": "Liste de souhaits",
+  
+  "potraiModificarloInSeguito": "(vous pourrez le modifier plus tard)"
+}

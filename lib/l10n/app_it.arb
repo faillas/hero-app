@@ -1,0 +1,107 @@
+{
+  "aggiorna": "Aggiorna",
+  "aggiungi": "AGGIUNGI",
+  "aggiungiUnaNota": "Aggiungi una nota",
+  "albergo": "Albergo",
+  "annulla": "Annulla",
+  "auto": "Auto",
+  "autobus": "Autobus",
+  
+  "bacheca": "BACHECA",
+  "benvenutoIn": "Benvenuto in",
+  "budget": "Budget",
+  "budgets": "Budgets",
+  
+  "categoria": "Categoria",
+  "categorie": "Categorie",
+  "creaUnaBachecaVirtuale": "Crea una bacheca virtuale per annotare tutto ciò che può esserti utile",
+  "creaUnaLista": "Crea una lista di cose da fare prima e dopo i tuoi viaggi",
+  "conferma": "Conferma",
+  "costi": "Costi",
+  
+
+  "dashboard": "dashboard",
+  "dark": "dark",
+  "data": "Data",
+  "dataDiFine": "Data di fine",
+  "dataDiInizio": "Data di inizio",
+  "dataEOra": "Data e ora",
+  "dataInizioFine": "Data inizio - fine",
+  "descrizioneNota": "Descrizione nota",
+  "dettaglioViaggio":"dettaglio viaggio",
+  "doveVuoiAndare": "Dove vuoi andare?",
+  
+  "edit": "Edit",
+
+  "elimina": "Elimina",
+  "eliminaViaggio": "Elimina viaggio",
+  "erroreCaricamentoImmagine": "Errore caricamento immagine",
+  
+  "graficoNonDisponibile": "grafico non disponibile",
+  "galleria": "GALLERIA",
+  
+  "impostazioni": "Impostazioni",
+  "informazioni": "Informazioni",
+  "itinerari": "Itinerari",
+
+  "light": "light",
+  
+  "mare": "Mare",
+  "metro": "Metro",
+  "modificaViaggio": "modifica viaggio",
+  "montagna": "Montagna",
+  "museo": "Museo",
+  
+  "nome": "Nome",
+  "nonCiSonoBudget": "Non ci sono budget per questo viaggio",
+  "nonCiSonoBudgetRegistrati": "non ci sono budget registrati per questo viaggio",
+  "nonCiSonoNote": "Non ci sono note registrate",
+  "nonCiSonoPianificazioni": "non ci sono pianificazioni per questo viaggio",
+  "nonCiSonoPianificazioniRegistrate": "Non ci sono pianificazioni registrate per questo viaggio",
+  "nonCiSonoVociInWishlist": "Non ci sono voci in wishlist registrate",
+  "nonRecuperarePianificazione": "Non è stato possibile recuperare la pianificazione di viaggio",
+  "nonSelezionata": "Non selezionata",
+  "nonCiSonoViaggiRegistrati": "Non ci sono viaggi registrati",
+  "note": "Note",
+  "nuovoViaggio": "nuovo viaggio",
+
+  "immagineNonDisponibile": "Immagine non disponibile",
+  
+  "oraPuoiIniziare": "Ora puoi iniziare a registrare i tuoi viaggi!",
+  "orario": "Orario",
+  
+  "pagamento": "Pagamento",
+  "pasto": "Pasto",
+  "pianificaNuoviViaggi": "Pianifica nuovi viaggi",
+  "pianificazioneGiornaliera": "Pianificazione giornaliera",
+  "pianificazioni": "Pianificazioni",
+  "prezzo": "Prezzo",
+  "preventivo": "Preventivo",
+  
+  "reportPDF": "REPORT PDF",
+  
+  "salva": "Salva",
+  "scegliTemaApp": "Scegli il tema dell'applicazione",
+  "sicuroDiEliminareViaggio": "Sicuro di voler eliminare il viaggio? Tutti i budget e le pianificazioni associate verranno cancellate.",
+  "specificarePrezzoENome": "Specificare almeno il prezzo e il nome",
+  "specificareDescrizione": "Specificare almeno la descrizione",
+  "specificareDescrizioneEOrario": "Specificare almeno la descrizione e l'ora di inizio",
+  "specificareNomeEData": "Specificare almeno nome e data di inizio e fine del viaggio",
+  "speciale": "Speciale",
+  "spesePerViaggio": "Spese per viaggio",
+  
+  "taxi": "Taxi",
+  "temaApplicazione": "Tema applicazione",
+  "timeline": "TIMELINE",
+  
+  "formatoImmagineNonSupportato": "Formato immagine non supportato:",
+  
+  "vedi": "Vedi",
+  "vediTuttiITuoiViaggi": "Vedi tutti i tuoi viaggi in un'unica timeline, in bacheca o in galleria",
+  "volo": "Volo",
+  "viaggi": "Viaggi",
+  
+  "wishlist": "Wishlist",
+  
+  "potraiModificarloInSeguito": "(potrai modificarlo in seguito)"
+}
