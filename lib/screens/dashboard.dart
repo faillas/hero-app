@@ -3,7 +3,7 @@ import 'package:test_drive/services/note_service.dart';
 import 'package:test_drive/services/travel_service.dart';
 import 'package:test_drive/services/wishlist_service.dart';
 import 'package:test_drive/widgets/bottom_menu.dart';
-import 'package:test_drive/widgets/dashboard_slider.dart';
+// import 'package:test_drive/widgets/dashboard_slider.dart';
 import 'package:test_drive/widgets/graphs/costs.dart';
 import 'package:test_drive/widgets/graphs/travels_line.dart';
 import 'package:test_drive/widgets/topbar.dart';
@@ -110,7 +110,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 ]
               ),
             ),
-            const DashboardSlider(),
+            // const DashboardSlider(),
             buildCard(
               Column(children: [
                 Text(AppLocalizations.of(context)!.viaggi, 
