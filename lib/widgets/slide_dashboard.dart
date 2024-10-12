@@ -21,28 +21,35 @@ class SlideDashboard extends StatelessWidget {
       onTap:(){
         Navigator.of(context).pushReplacementNamed(url);
       },
-      child: Card(
-        color: background,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(left:20.0),
-                child: Text(
-                  text,
-                  style: TextStyle(fontSize: 24, color: textColor, fontWeight: FontWeight.bold),
+      child: ClipRRect(
+        borderRadius: const BorderRadius.all(Radius.circular(4.0)),
+        child: Container(
+          width: double.infinity,
+          height: 200,
+          child: Card(
+            color: background,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left:20.0),
+                    child: Text(
+                      text,
+                      style: TextStyle(fontSize: 24, color: textColor, fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ),
-              ),
+                IconButton(
+                  icon: icon,
+                  onPressed: () {
+                    // Handle edit action
+                  },
+                ),
+              ],
             ),
-            IconButton(
-              icon: icon,
-              onPressed: () {
-                // Handle edit action
-              },
-            ),
-          ],
+          ),
         ),
       ),
     );

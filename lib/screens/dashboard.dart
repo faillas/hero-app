@@ -3,9 +3,9 @@ import 'package:hero/services/note_service.dart';
 import 'package:hero/services/travel_service.dart';
 import 'package:hero/services/wishlist_service.dart';
 import 'package:hero/widgets/bottom_menu.dart';
-// import 'package:hero/widgets/dashboard_slider.dart';
 import 'package:hero/widgets/graphs/costs.dart';
 import 'package:hero/widgets/graphs/travels_line.dart';
+import 'package:hero/widgets/grid_app_actions.dart';
 import 'package:hero/widgets/topbar.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -54,63 +54,67 @@ class _DashboardPageState extends State<DashboardPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height:135, child:  GridView.count(
-                crossAxisCount: 3,
-                crossAxisSpacing: 10.0,
-                mainAxisSpacing: 10.0,
+            SizedBox(height:125, child:  Row(
+                
                 children: [ 
-                  buildCard(
-                    Column(children: [
-                      Text(AppLocalizations.of(context)!.viaggi, 
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      FutureBuilder(
-                        future: travelservice.loadTravels(), 
-                        builder: (context, snapshot)=> snapshot.connectionState == ConnectionState.waiting
-                          ? const Center(child: CircularProgressIndicator())
-                          : Text(
-                            travels.length.toString(), 
-                            style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold)
-                          )
-                      )                  
-                    ],)
+                  Expanded(
+                    child: buildCard(
+                      Column(children: [
+                        Text(AppLocalizations.of(context)!.viaggi, 
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        FutureBuilder(
+                          future: travelservice.loadTravels(), 
+                          builder: (context, snapshot)=> snapshot.connectionState == ConnectionState.waiting
+                            ? const Center(child: CircularProgressIndicator())
+                            : Text(
+                              travels.length.toString(), 
+                              style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold)
+                            )
+                        )                  
+                      ],)
+                    ),
                   ),
-                  buildCard(
-                    Column(children: [
-                      Text(AppLocalizations.of(context)!.note, 
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      FutureBuilder(
-                        future: noteService.load(), 
-                        builder: (context, snapshot)=> snapshot.connectionState == ConnectionState.waiting
-                          ? const Center(child: CircularProgressIndicator())
-                          : Text(
-                            notes.length.toString(), 
-                            style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold)
-                          )
-                      )                  
-                    ],)
+                  Expanded(
+                    child: buildCard(
+                      Column(children: [
+                        Text(AppLocalizations.of(context)!.note, 
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        FutureBuilder(
+                          future: noteService.load(), 
+                          builder: (context, snapshot)=> snapshot.connectionState == ConnectionState.waiting
+                            ? const Center(child: CircularProgressIndicator())
+                            : Text(
+                              notes.length.toString(), 
+                              style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold)
+                            )
+                        )                  
+                      ],)
+                    ),
                   ),
-                  buildCard(
-                    Column(children: [
-                       Text(AppLocalizations.of(context)!.wishlist, 
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      FutureBuilder(
-                        future: wishService.load(), 
-                        builder: (context, snapshot)=> snapshot.connectionState == ConnectionState.waiting
-                          ? const Center(child: CircularProgressIndicator())
-                          : Text(
-                            wishlist.length.toString(), 
-                            style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold)
-                          )
-                      )                   
-                    ],)
+                  Expanded(
+                    child: buildCard(
+                      Column(children: [
+                         Text(AppLocalizations.of(context)!.wishlist, 
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        FutureBuilder(
+                          future: wishService.load(), 
+                          builder: (context, snapshot)=> snapshot.connectionState == ConnectionState.waiting
+                            ? const Center(child: CircularProgressIndicator())
+                            : Text(
+                              wishlist.length.toString(), 
+                              style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold)
+                            )
+                        )                   
+                      ],)
+                    ),
                   )               
                 ]
               ),
             ),
-            // const DashboardSlider(),
+            const GridAppActions(),
             buildCard(
               Column(children: [
                 Text(AppLocalizations.of(context)!.viaggi, 
@@ -120,9 +124,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   builder: (context, snapshot)=> snapshot.connectionState == ConnectionState.waiting
                     ? const Center(child: CircularProgressIndicator())
                     : TravelsLine(travels: travels)
-                )      
-                
-                
+                )            
               ],)
             ),
             buildCard(
