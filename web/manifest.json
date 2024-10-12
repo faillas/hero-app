@@ -1,6 +1,6 @@
 {
-    "name": "test_drive",
-    "short_name": "test_drive",
+    "name": "hero",
+    "short_name": "hero",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#hexcode",

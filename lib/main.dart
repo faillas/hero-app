@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_drive/animations.dart';
-import 'package:test_drive/bootstrap.dart';
-import 'package:test_drive/providers/theme_provider.dart';
-import 'package:test_drive/screens/first_load.dart';
-import 'package:test_drive/screens/add_travel.dart';
-import 'package:test_drive/screens/dashboard.dart';
-import 'package:test_drive/screens/edit_travel.dart';
-import 'package:test_drive/screens/notes.dart';
-import 'package:test_drive/screens/travel_detail.dart';
-import 'package:test_drive/screens/travels.dart';
-import 'package:test_drive/screens/wishlist.dart';
-import 'package:test_drive/services/config_service.dart';
+import 'package:hero/animations.dart';
+import 'package:hero/bootstrap.dart';
+import 'package:hero/providers/theme_provider.dart';
+import 'package:hero/screens/first_load.dart';
+import 'package:hero/screens/add_travel.dart';
+import 'package:hero/screens/dashboard.dart';
+import 'package:hero/screens/edit_travel.dart';
+import 'package:hero/screens/notes.dart';
+import 'package:hero/screens/travel_detail.dart';
+import 'package:hero/screens/travels.dart';
+import 'package:hero/screens/wishlist.dart';
+import 'package:hero/services/config_service.dart';
 import 'palette.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Hero: your travels in one click',
       theme: ThemeData(     
         useMaterial3: true,
       ),
@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
       builder: (context, themeProvider, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: 'Hero: your travels in one click',
           localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,

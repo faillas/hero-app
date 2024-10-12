@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/widgets/bottom_menu.dart';
-import 'package:test_drive/widgets/topbar.dart';
-import 'package:test_drive/widgets/travels_view.dart';
-import 'package:test_drive/widgets/views/travels_views_navigation.dart';
+import 'package:hero/widgets/bottom_menu.dart';
+import 'package:hero/widgets/topbar.dart';
+import 'package:hero/widgets/travels_view.dart';
+import 'package:hero/widgets/views/travels_views_navigation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

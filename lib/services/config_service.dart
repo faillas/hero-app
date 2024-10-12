@@ -1,8 +1,8 @@
 
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:path/path.dart' as path;
-import 'package:test_drive/models/configuration.dart';
-import 'package:test_drive/models/theme.dart';
+import 'package:hero/models/configuration.dart';
+import 'package:hero/models/theme.dart';
 import 'package:sqflite/sqflite.dart';
 
 Future<Database> _getDatabase() async {

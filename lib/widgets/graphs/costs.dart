@@ -1,8 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:test_drive/widgets/graphs/color_helper.dart';
-import 'package:test_drive/widgets/graphs/graph_colors.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/widgets/graphs/color_helper.dart';
+import 'package:hero/widgets/graphs/graph_colors.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Costs extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/models/budget.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/models/budget.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BudgetList extends StatefulWidget {

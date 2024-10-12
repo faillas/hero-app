@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/screens/dashboard.dart';
-import 'package:test_drive/screens/on_boarding.dart';
+import 'package:hero/screens/dashboard.dart';
+import 'package:hero/screens/on_boarding.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/services/config_service.dart';
+import 'package:hero/services/config_service.dart';
 
 GetIt getIt = GetIt.instance;
 

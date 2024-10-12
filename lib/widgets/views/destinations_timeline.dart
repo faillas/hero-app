@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/providers/travels_provider.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/providers/travels_provider.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
-import 'package:test_drive/widgets/cover_travel.dart';
-import 'package:test_drive/widgets/select_action_travel.dart';
+import 'package:hero/widgets/cover_travel.dart';
+import 'package:hero/widgets/select_action_travel.dart';
 
 GetIt getIt = GetIt.instance;
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/helpers/file_manager.dart';
-import 'package:test_drive/models/budget.dart';
-import 'package:test_drive/models/plan.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/providers/travels_provider.dart';
-import 'package:test_drive/services/travel_service.dart';
+import 'package:hero/helpers/file_manager.dart';
+import 'package:hero/models/budget.dart';
+import 'package:hero/models/plan.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/providers/travels_provider.dart';
+import 'package:hero/services/travel_service.dart';
 import 'package:provider/provider.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

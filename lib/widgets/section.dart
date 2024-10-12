@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/palette.dart';
+import 'package:hero/palette.dart';
 
 class Section extends StatelessWidget {
   final String title;

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/helpers/validation_manager.dart';
-import 'package:test_drive/models/note.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/services/note_service.dart';
-import 'package:test_drive/widgets/bottom_menu.dart';
-import 'package:test_drive/widgets/topbar.dart';
+import 'package:hero/helpers/validation_manager.dart';
+import 'package:hero/models/note.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/services/note_service.dart';
+import 'package:hero/widgets/bottom_menu.dart';
+import 'package:hero/widgets/topbar.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 GetIt getIt = GetIt.instance;

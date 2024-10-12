@@ -2,10 +2,10 @@ import 'dart:typed_data';
 
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:path/path.dart' as path;
-import 'package:test_drive/models/budget.dart';
-import 'package:test_drive/models/cover.dart';
-import 'package:test_drive/models/plan.dart';
-import 'package:test_drive/models/travel.dart';
+import 'package:hero/models/budget.dart';
+import 'package:hero/models/cover.dart';
+import 'package:hero/models/plan.dart';
+import 'package:hero/models/travel.dart';
 import 'package:sqflite/sqflite.dart';
 
 Future<Database> _getDatabase() async {

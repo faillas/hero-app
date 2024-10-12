@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/helpers/date_manager.dart';
-import 'package:test_drive/helpers/icon_manager.dart';
-import 'package:test_drive/models/plan.dart';
+import 'package:hero/helpers/date_manager.dart';
+import 'package:hero/helpers/icon_manager.dart';
+import 'package:hero/models/plan.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 GetIt getIt = GetIt.instance;

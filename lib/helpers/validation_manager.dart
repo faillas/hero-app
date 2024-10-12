@@ -1,8 +1,8 @@
-import 'package:test_drive/models/budget.dart';
-import 'package:test_drive/models/note.dart';
-import 'package:test_drive/models/plan.dart';
-import 'package:test_drive/models/travel.dart';
-import 'package:test_drive/models/wish_item.dart';
+import 'package:hero/models/budget.dart';
+import 'package:hero/models/note.dart';
+import 'package:hero/models/plan.dart';
+import 'package:hero/models/travel.dart';
+import 'package:hero/models/wish_item.dart';
 
 class ValidationManager {
 

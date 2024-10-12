@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_drive/providers/travels_provider.dart';
-import 'package:test_drive/services/travel_service.dart';
-import 'package:test_drive/widgets/views/destinations_card_view.dart';
-import 'package:test_drive/widgets/views/destinations_timeline.dart';
-import 'package:test_drive/widgets/views/gallery.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/providers/travels_provider.dart';
+import 'package:hero/services/travel_service.dart';
+import 'package:hero/widgets/views/destinations_card_view.dart';
+import 'package:hero/widgets/views/destinations_timeline.dart';
+import 'package:hero/widgets/views/gallery.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

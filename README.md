@@ -1,4 +1,4 @@
-# test_drive
+# hero
 
 Applicazione per i viaggi con le seguenti funzionalità:
 
@@ -44,7 +44,7 @@ flutter install
 
 * dates range input validations
 * theme management
-* refactoring test_drive ---> hero
+* refactoring hero ---> hero
 * recheck landing page
 * messa in produzione
 

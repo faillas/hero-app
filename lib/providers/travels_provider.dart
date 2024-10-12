@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/models/travel.dart';
+import 'package:hero/models/travel.dart';
 
 class TravelsProvider extends ChangeNotifier {
   String? view;

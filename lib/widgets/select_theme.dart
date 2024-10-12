@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/providers/theme_provider.dart';
-import 'package:test_drive/services/config_service.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/providers/theme_provider.dart';
+import 'package:hero/services/config_service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

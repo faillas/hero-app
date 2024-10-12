@@ -2,11 +2,11 @@ import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:test_drive/helpers/file_manager.dart';
+import 'package:hero/helpers/file_manager.dart';
 import 'dart:io';
-import 'package:test_drive/palette.dart';
+import 'package:hero/palette.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/widgets/warning_message.dart';
 
 GetIt getIt = GetIt.instance;
 

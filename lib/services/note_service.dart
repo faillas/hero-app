@@ -2,7 +2,7 @@
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:sqflite/sqlite_api.dart';
 import 'package:path/path.dart' as path;
-import 'package:test_drive/models/note.dart';
+import 'package:hero/models/note.dart';
 
 Future<Database> _getDatabase() async {
   final dbPath = await sql.getDatabasesPath();

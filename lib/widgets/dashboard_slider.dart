@@ -1,8 +1,8 @@
 // import 'package:flutter/material.dart';
-// import 'package:carousel_slider/carousel_slider.dart' as carousel_slider;
-// import 'package:test_drive/palette.dart';
-// import 'package:test_drive/widgets/slide_dashboard.dart';
+// import 'package:hero/palette.dart';
+// import 'package:hero/widgets/slide_dashboard.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 
 
 // class DashboardSlider extends StatelessWidget {
@@ -13,8 +13,8 @@
 //   Widget build(BuildContext context) {
 
 
-//     return carousel_slider.CarouselSlider(
-//       options: carousel_slider.CarouselOptions(
+//     return ExpandableCarousel(
+//       options: ExpandableCarouselOptions(
 //         height: 200.0,
 //         autoPlay: false,
 //         enlargeCenterPage: true,
