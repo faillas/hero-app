@@ -34,6 +34,7 @@ class _DateRangeInputState extends State<DateRangeInput> {
   }
 
   Future<void> _pickDateRange(BuildContext context) async {
+    final locale = Localizations.localeOf(context); 
     // Select start date
     final DateTime? startDate = await showDatePicker(
       context: context,
@@ -41,7 +42,8 @@ class _DateRangeInputState extends State<DateRangeInput> {
       initialDate: _selectedRange!.start,
       firstDate: DateTime(2000),
       lastDate: DateTime(2100),
-      barrierColor: Theme.of(context).primaryColor
+      barrierColor: Theme.of(context).primaryColor,
+      locale: locale
     );
 
     if (startDate == null) return;
@@ -53,7 +55,8 @@ class _DateRangeInputState extends State<DateRangeInput> {
       initialDate: _selectedRange!.end,
       firstDate: startDate,
       lastDate: DateTime(2100),
-      barrierColor: Theme.of(context).primaryColor
+      barrierColor: Theme.of(context).primaryColor,
+      locale: locale
     );
 
     if (endDate == null) return;
