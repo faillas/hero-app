@@ -14,6 +14,7 @@ class _InputDateState extends State<InputDate> {
   DateTime? _selectedDate;
 
   Future<void> _selectDate(BuildContext context) async {
+    final locale = Localizations.localeOf(context); 
     final DateTime? pickedDate = await showDatePicker(
       context: context,
       initialDate: _selectedDate ?? DateTime.now(),
@@ -21,6 +22,7 @@ class _InputDateState extends State<InputDate> {
       barrierColor: Theme.of(context).primaryColor
       firstDate: DateTime(2000),
       lastDate: DateTime(2101),
+      locale: locale
     );
     widget.onSaveFunction!(pickedDate);
     if (pickedDate != null && pickedDate != _selectedDate) {
