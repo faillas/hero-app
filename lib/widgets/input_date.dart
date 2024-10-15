@@ -17,7 +17,7 @@ class _InputDateState extends State<InputDate> {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
       initialDate: _selectedDate ?? DateTime.now(),
-      
+      barrierColor: Theme.of(context).primaryColor
       firstDate: DateTime(2000),
       lastDate: DateTime(2101),
     );
