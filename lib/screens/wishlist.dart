@@ -132,9 +132,14 @@ class _WishListState extends State<WishList> {
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   decoration: _wishlist[index].checked == 1 ? TextDecoration.lineThrough : TextDecoration.none,
+                                  color: Theme.of(context).hintColor,
+                                  decorationColor: Theme.of(context).hintColor
                                 ),
                               ),
                               trailing: Checkbox(
+                                activeColor: Theme.of(context).highlightColor,
+                                checkColor: Theme.of(context).primaryColor,
+                                side: BorderSide(color:Theme.of(context).hintColor),
                                 value: _wishlist[index].checked == 0 ? false :true,
                                 onChanged: (bool? value) {
                                   if(value == true){
