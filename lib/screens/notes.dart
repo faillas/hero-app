@@ -74,6 +74,20 @@ class _NotesState extends State<Notes> {
     }
   }
 
+  Color colorTextFromType(type) {
+    switch (type) {
+      case 'default':
+        return Colors.white;
+      case 'info':
+        return Colors.black;
+      case 'warning':
+        return Colors.black;
+      case 'danger':
+        return Colors.white;
+      default: return Colors.black;
+    }
+  }
+
   @override
   void initState() {
     loadNotes();
@@ -195,6 +209,7 @@ class _NotesState extends State<Notes> {
                                     child: Text(
                                       _notes[index].description,
                                       overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(color:colorTextFromType(_notes[index].type) ),
                                     ),
                                   ),
                                 ),
