@@ -41,6 +41,7 @@ class _DateRangeInputState extends State<DateRangeInput> {
       initialDate: _selectedRange!.start,
       firstDate: DateTime(2000),
       lastDate: DateTime(2100),
+      barrierColor: Theme.of(context).primaryColor
     );
 
     if (startDate == null) return;
@@ -52,6 +53,7 @@ class _DateRangeInputState extends State<DateRangeInput> {
       initialDate: _selectedRange!.end,
       firstDate: startDate,
       lastDate: DateTime(2100),
+      barrierColor: Theme.of(context).primaryColor
     );
 
     if (endDate == null) return;
