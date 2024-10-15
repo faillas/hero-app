@@ -339,7 +339,6 @@ class _EditTravelState extends State<EditTravel> {
           ],
         )
         :WarningMessage(message: AppLocalizations.of(context)!.nonRecuperarePianificazione),
-    bottomNavigationBar: const BottomNavBar(),
     );
   }
 
