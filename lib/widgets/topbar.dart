@@ -39,6 +39,7 @@ class Topbar extends StatelessWidget implements PreferredSizeWidget {
 
     void showBottomDialog(dialogContext) {
       showModalBottomSheet(
+        barrierColor: Colors.white,
         backgroundColor: Colors.white,
         context: context,
         isScrollControlled: true,
@@ -46,20 +47,36 @@ class Topbar extends StatelessWidget implements PreferredSizeWidget {
         builder: (BuildContext dialogContext) {
           return Column(
             children: [
-              SectionHeader(title:AppLocalizations.of(context)!.impostazioni),
-              SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(AppLocalizations.of(context)!.temaApplicazione, textAlign: TextAlign.left, 
-                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                color: Palette.info.withOpacity(0.25),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      AppLocalizations.of(context)!.impostazioni,
+                      style: const TextStyle(color: Colors.black,fontSize: 20.0, fontWeight: FontWeight.bold),
                     ),
-                    const SelectTheme()
-                  ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(AppLocalizations.of(context)!.temaApplicazione, textAlign: TextAlign.left, 
+                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
+                      ),
+                      const SizedBox(height: 20,),
+                      const SelectTheme()
+                    ],
+                  ),
                 ),
               ),
             ],
