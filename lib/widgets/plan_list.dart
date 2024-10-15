@@ -41,15 +41,15 @@ class _PlanListState extends State<PlanList> {
       itemBuilder: (context, index) {
         final item = widget.items[index];
         return ListTile(
-          leading: CircleAvatar(radius: 16, backgroundColor: Palette.info.withOpacity(0.25), child: iconManager.getIconFromLabel(widget.items[index].category),),
+          leading: CircleAvatar(radius: 16, backgroundColor: Palette.info, child: iconManager.getIconFromLabel(widget.items[index].category),),
           subtitle:Text(
             widget.items[index].description, 
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Theme.of(context).hintColor),
             overflow: TextOverflow.ellipsis,
           ),
           title: Text(
             '${dateManager.formatStringFromDate(widget.items[index].date)} - ${widget.items[index].hourStart}',
-            style: const TextStyle(fontSize: 12),
+            style: TextStyle(fontSize: 12, color: Theme.of(context).hintColor),
           ),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
