@@ -61,12 +61,12 @@ class _SelectActionTravelState extends State<SelectActionTravel> {
               ),
               child: Text(AppLocalizations.of(context)!.conferma),
               onPressed: () {
-                Navigator.of(context).pop();
                 final id = provider.travel!.id;
                 provider.clearDetail();
                 service.deleteTravel(id);
                 setState(() {});
                 widget.onSelect();
+                Navigator.of(dialogContext).pop();
               },
             ),
           ],
