@@ -41,7 +41,7 @@ class CostsState extends State<Costs> {
         items.add(barGroup);
         
         if (real > maxPrice) {
-          maxPrice = real;
+          maxPrice = real + estimate;
         }
         count++;
       }
