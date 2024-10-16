@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/helpers/file_manager.dart';
-import 'package:test_drive/models/budget.dart';
-import 'package:test_drive/models/plan.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/providers/travels_provider.dart';
-import 'package:test_drive/services/travel_service.dart';
-import 'package:test_drive/widgets/budget_list.dart';
-import 'package:test_drive/widgets/cover_travel.dart';
-import 'package:test_drive/widgets/plan_list.dart';
-import 'package:test_drive/widgets/section_header.dart';
-import 'package:test_drive/widgets/topbar.dart';
+import 'package:hero/helpers/file_manager.dart';
+import 'package:hero/models/budget.dart';
+import 'package:hero/models/plan.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/providers/travels_provider.dart';
+import 'package:hero/services/travel_service.dart';
+import 'package:hero/widgets/budget_list.dart';
+import 'package:hero/widgets/cover_travel.dart';
+import 'package:hero/widgets/plan_list.dart';
+import 'package:hero/widgets/section_header.dart';
+import 'package:hero/widgets/topbar.dart';
 import 'package:provider/provider.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 GetIt getIt = GetIt.instance;
@@ -114,8 +114,8 @@ class _TravelDetailState extends State<TravelDetail> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  const Icon(Icons.download, color: Palette.primary,),
-                                  Text(AppLocalizations.of(context)!.reportPDF, textAlign: TextAlign.end, style:const TextStyle(color: Palette.primary)),
+                                  Icon(Icons.download, color: Theme.of(context).highlightColor,),
+                                  Text(AppLocalizations.of(context)!.reportPDF, textAlign: TextAlign.end, style: TextStyle(color: Theme.of(context).highlightColor)),
                                 ],
                               ),
                             ),
@@ -154,8 +154,8 @@ class _TravelDetailState extends State<TravelDetail> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    const Icon(Icons.download, color: Palette.primary,),
-                                    Text(AppLocalizations.of(context)!.reportPDF, textAlign: TextAlign.end, style:const TextStyle(color: Palette.primary)),
+                                    Icon(Icons.download, color: Theme.of(context).highlightColor,),
+                                    Text(AppLocalizations.of(context)!.reportPDF, textAlign: TextAlign.end, style: TextStyle(color: Theme.of(context).highlightColor)),
                                   ],
                                 ),
                               ),
