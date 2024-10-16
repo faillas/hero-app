@@ -127,10 +127,10 @@ class _DashboardPageState extends State<DashboardPage> {
             ),
             buildCard(
                Column(children: [
-                Text(AppLocalizations.of(context)!.spesePerViaggio, 
+                Text(AppLocalizations.of(context)!.speseAnnoCorrente, 
                 style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20,),),
                 FutureBuilder(
-                  future: travelservice.getTravelsCosts(), 
+                  future: travelservice.getCurrentYearCosts(), 
                   builder: (context, snapshot)=> snapshot.connectionState == ConnectionState.waiting
                     ? const Center(child: CircularProgressIndicator())
                     : Costs(budgets: budgets)
