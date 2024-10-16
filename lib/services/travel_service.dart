@@ -122,6 +122,24 @@ class TravelService {
     return data;
   }
 
+  Future<List<Map<String, Object?>>> getCurrentYearCosts() async {
+    final db = await _getDatabase();
+    final data = await db.rawQuery('''
+      SELECT 
+        t.id AS travel_id, 
+        t.name AS travel_name, 
+        SUM(CAST(b.price AS REAL)) AS total_price,
+        SUM(CAST(b.estimate AS REAL)) AS total_estimate,
+        substr(t.date_start, 7, 4) AS travel_year
+      FROM travels t
+      LEFT JOIN budgets b 
+        ON t.id = b.travel_id
+      WHERE substr(t.date_start, 7, 4) = strftime('%Y', 'now')
+      GROUP BY t.id
+    ''');    
+    return data;
+  }
+
   Future<List<Plan>> loadPlans(travelId) async {
     final db = await _getDatabase();
     final data = await db.query('plans', 
