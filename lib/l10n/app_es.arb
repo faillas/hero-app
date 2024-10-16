@@ -87,10 +87,12 @@
   "specificareDescrizioneEOrario": "Especifica al menos la descripción y la hora de inicio",
   "specificareNomeEData": "Especifica al menos el nombre y la fecha de inicio y fin del viaje",
   "speciale": "Especial",
+  "speseAnnoCorrente": "Gastos del año en curso",
   "spesePerViaggio": "Gastos por viaje",
   
   "taxi": "Taxi",
   "temaApplicazione": "Tema de la aplicación",
+  "tempo":"Tiempo",
   "timeline": "CRONOLOGÍA",
   
   "formatoImmagineNonSupportato": "Formato de imagen no soportado:",

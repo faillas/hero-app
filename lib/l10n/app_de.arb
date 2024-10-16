@@ -87,10 +87,12 @@
   "specificareDescrizioneEOrario": "Gib mindestens die Beschreibung und die Startzeit an",
   "specificareNomeEData": "Gib mindestens den Namen und das Start- und Enddatum der Reise an",
   "speciale": "Besonders",
+  "speseAnnoCorrente": "Ausgaben des laufenden Jahres",
   "spesePerViaggio": "Kosten pro Reise",
   
   "taxi": "Taxi",
   "temaApplicazione": "App-Thema",
+  "tempo":"Zeit",
   "timeline": "ZEITLEISTE",
   
   "formatoImmagineNonSupportato": "Nicht unterstütztes Bildformat:",

@@ -88,10 +88,12 @@
   "specificareDescrizioneEOrario": "Specificare almeno la descrizione e l'ora di inizio",
   "specificareNomeEData": "Specificare almeno nome e data di inizio e fine del viaggio",
   "speciale": "Speciale",
+  "speseAnnoCorrente": "Spese anno corrente",
   "spesePerViaggio": "Spese per viaggio",
   
   "taxi": "Taxi",
   "temaApplicazione": "Tema applicazione",
+  "tempo":"Tempo",
   "timeline": "TIMELINE",
   
   "formatoImmagineNonSupportato": "Formato immagine non supportato:",
