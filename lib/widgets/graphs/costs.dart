@@ -1,8 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:test_drive/widgets/graphs/color_helper.dart';
-import 'package:test_drive/widgets/graphs/graph_colors.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/widgets/graphs/color_helper.dart';
+import 'package:hero/widgets/graphs/graph_colors.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Costs extends StatefulWidget {
@@ -81,6 +81,21 @@ class CostsState extends State<Costs> {
           ?Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+            Row(
+              children: [
+                Container( width: 20 , height: 5,color: AppColors.contentColorYellow,),
+                const SizedBox(width: 10,),
+                Text(AppLocalizations.of(context)!.preventivo),
+              ],
+            ),
+            Row(
+              children: [
+                Container( width: 20 , height: 5,color: AppColors.contentColorRed,),
+                const SizedBox(width: 10,),
+                Text(AppLocalizations.of(context)!.prezzo),
+              ],
+            ),
+            const SizedBox(height: 20,),
             
             Expanded(
               child: BarChart(
@@ -130,6 +145,7 @@ class CostsState extends State<Costs> {
             const SizedBox(
               height: 12,
             ),
+            
           ],
         ):WarningMessage(message: AppLocalizations.of(context)!.graficoNonDisponibile,),
       ),
