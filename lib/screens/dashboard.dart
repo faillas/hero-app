@@ -34,7 +34,7 @@ class _DashboardPageState extends State<DashboardPage> {
     travels = await travelservice.loadTravels();
     notes = await noteService.load();
     wishlist = await wishService.load();
-    budgets = await travelservice.getTravelsCosts();
+    budgets = await travelservice.getCurrentYearCosts();
     // setState(() {
       
     // });
