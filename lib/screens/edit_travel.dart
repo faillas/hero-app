@@ -1,26 +1,25 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:test_drive/helpers/date_manager.dart';
-import 'package:test_drive/helpers/validation_manager.dart';
-import 'package:test_drive/models/budget.dart';
-import 'package:test_drive/models/cover.dart';
-import 'package:test_drive/models/plan.dart';
-import 'package:test_drive/models/travel.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/providers/travels_provider.dart';
-import 'package:test_drive/services/travel_service.dart';
-import 'package:test_drive/widgets/bottom_menu.dart';
-import 'package:test_drive/widgets/cover_travel.dart';
-import 'package:test_drive/widgets/date_range_input.dart';
-import 'package:test_drive/widgets/input_date.dart';
-import 'package:test_drive/widgets/input_time.dart';
-import 'package:test_drive/widgets/budget_list.dart';
-import 'package:test_drive/widgets/plan_list.dart';
-import 'package:test_drive/widgets/section_header.dart';
-import 'package:test_drive/widgets/select_category.dart';
-import 'package:test_drive/widgets/topbar.dart';
+import 'package:hero/helpers/date_manager.dart';
+import 'package:hero/helpers/validation_manager.dart';
+import 'package:hero/models/budget.dart';
+import 'package:hero/models/cover.dart';
+import 'package:hero/models/plan.dart';
+import 'package:hero/models/travel.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/providers/travels_provider.dart';
+import 'package:hero/services/travel_service.dart';
+import 'package:hero/widgets/cover_travel.dart';
+import 'package:hero/widgets/date_range_input.dart';
+import 'package:hero/widgets/input_date.dart';
+import 'package:hero/widgets/input_time.dart';
+import 'package:hero/widgets/budget_list.dart';
+import 'package:hero/widgets/plan_list.dart';
+import 'package:hero/widgets/section_header.dart';
+import 'package:hero/widgets/select_category.dart';
+import 'package:hero/widgets/topbar.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -80,7 +79,7 @@ class _EditTravelState extends State<EditTravel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Topbar(title:AppLocalizations.of(context)!.modificaViaggio, father:true,),
+      appBar: Topbar(title:AppLocalizations.of(context)!.modificaViaggio, father:false,),
       body: (viewProvider.travel != null)
         ?Column(
           children: [
@@ -188,6 +187,7 @@ class _EditTravelState extends State<EditTravel> {
                               trailingKey:AppLocalizations.of(context)!.prezzo,
                               onDelete: (Budget budget){
                                 budgetsToDelete.add(budget);
+                                //budgetItems.remove(budget);
                               },
                             )
                             :WarningMessage(message:AppLocalizations.of(context)!.nonCiSonoBudget)
@@ -204,9 +204,19 @@ class _EditTravelState extends State<EditTravel> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InputDate(onSaveFunction: (DateTime value) {
-                              setState(() {
-                                startDatePlan = value;
-                              });
+                              final valid = validate.isDateInRange(startDate, endDate, value);
+                              if(valid== true){
+                                setState(() {
+                                  startDatePlan = value;
+                                });
+                              }else{
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    backgroundColor: Palette.danger,
+                                    content: Text(AppLocalizations.of(context)!.dataNonCompresa),
+                                  ),
+                                );
+                              }
                             },),  
                             Container(height: 50, color: Theme.of(context).dividerColor, width: 0.5,),   
                             Expanded(child: InputTime(onSaveFunction: (String value) {
@@ -284,6 +294,7 @@ class _EditTravelState extends State<EditTravel> {
                                 trailingKey:AppLocalizations.of(context)!.data,
                                 onDelete: (Plan plan){
                                   plansToDelete.add(plan);
+                                  //planItems.remove(plan);
                                 },
                               )
                               :WarningMessage(message:AppLocalizations.of(context)!.nonCiSonoPianificazioni)
@@ -339,7 +350,7 @@ class _EditTravelState extends State<EditTravel> {
           ],
         )
         :WarningMessage(message: AppLocalizations.of(context)!.nonRecuperarePianificazione),
-    bottomNavigationBar: const BottomNavBar(),
+    
     );
   }
 
