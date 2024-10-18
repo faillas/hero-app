@@ -3,7 +3,12 @@
 // import 'package:date_range_form_field/date_range_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:hero/helpers/validation_manager.dart';
+import 'package:hero/palette.dart';
 import 'package:intl/intl.dart';
+import 'package:get_it/get_it.dart';
+
+GetIt getIt = GetIt.instance;
 
 class DateRangeInput extends StatefulWidget {
   DateTimeRange? range;
@@ -22,6 +27,7 @@ class DateRangeInput extends StatefulWidget {
 }
 
 class _DateRangeInputState extends State<DateRangeInput> {
+  ValidationManager validate = getIt.get<ValidationManager>();
   DateTimeRange? _selectedRange;
 
   String getInputLabel(){
@@ -70,11 +76,22 @@ class _DateRangeInputState extends State<DateRangeInput> {
 
     if (endDate == null) return;
 
-    // Update the range and pass it to the parent widget
-    setState(() {
-      _selectedRange = DateTimeRange(start: startDate, end: endDate);
-      widget.onSaveFunction!(_selectedRange);
-    });
+    // validation
+    final valid = validate.isStartDateBeforeEndDate(startDate, endDate);
+    if(valid== true){
+      // Update the range and pass it to the parent widget
+      setState(() {
+        _selectedRange = DateTimeRange(start: startDate, end: endDate);
+        widget.onSaveFunction!(_selectedRange);
+      });
+    }else{
+      ScaffoldMessenger.of(context).showSnackBar(
+         SnackBar(
+          backgroundColor: Palette.danger,
+          content: Text(AppLocalizations.of(context)!.dataFineMaggioreDataInizio),
+        ),
+      );
+    }
   }
 
   @override
@@ -100,49 +117,5 @@ class _DateRangeInputState extends State<DateRangeInput> {
         ),
       ),
     );
-    // DateRangeField(
-    //     enabled: true,
-    //     initialValue: (widget.range != null)
-    //       ? widget.range
-    //       : DateTimeRange(
-    //           start: DateTime.now(),
-    //           end: DateTime.now().add(const Duration(days: 5))),
-    //       decoration: InputDecoration(
-          
-    //       labelText: widget.label,
-    //       // prefixIcon: Container(width:30,child: const Icon(Icons.date_range)),
-    //       hintText: 'Please select a start and end date',
-    //       border:  OutlineInputBorder(
-    //         borderRadius: BorderRadius.circular(8),
-    //         borderSide: const BorderSide(
-    //             width: 0, 
-    //             style: BorderStyle.none,
-    //         ),
-    //       ),
-    //       contentPadding: const EdgeInsets.all(0),
-    //       focusedBorder: const UnderlineInputBorder(),     
-    //     ),
-    //     validator: (value) {
-    //       return null;
-    
-    //       // if (value!.start.isBefore(DateTime.now())) {
-    //       //   return 'Please enter a later start date';
-    //       // }
-    //       // return null;
-    //     },
-    //     // onSaved: (value) {
-    //     //   widget.onSaveFunction!(value);
-    //     //   setState(() {
-    //     //     widget.range = value;
-    //     //   });
-    //     // },
-    //     onChanged: (value) {
-    //       widget.onSaveFunction!(value);
-    //       setState(() {
-    //         widget.range = value;
-    //       });
-    //     },
-        
-    //   );
   }
 }
