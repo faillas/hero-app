@@ -13,6 +13,7 @@ class Topbar extends StatelessWidget implements PreferredSizeWidget {
   final bool father;
   final bool? create;
   final bool? detail;
+  final String? notes;
   final bool? notifications;
   final VoidCallback? onSave;
   final double? elevation;
@@ -24,6 +25,7 @@ class Topbar extends StatelessWidget implements PreferredSizeWidget {
       this.create,
       this.notifications,
       this.detail,
+      this.notes,
       this.elevation,
       this.onSave,
       this.bgColor,
@@ -97,6 +99,10 @@ class Topbar extends StatelessWidget implements PreferredSizeWidget {
           Text(title, style: const TextStyle(fontSize: 16),), //AppLocalizations.of(context)!.helloWorld
         ]),
         actions: <Widget>[    
+           if (notes != null)
+            IconButton(
+                onPressed: onSave,
+                icon: Icon(notes == 'create'?Icons.lock: Icons.lock_open_outlined, color: Colors.white, size: 30)),
           if(father == true)
            IconButton(
                 onPressed: ()=>showBottomDialog(context),
