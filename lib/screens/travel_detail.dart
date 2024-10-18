@@ -59,28 +59,27 @@ class _TravelDetailState extends State<TravelDetail> {
                 color: Palette.neutral.withOpacity(0.75),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '${provider.travel!.dateStart} - ${provider.travel!.dateEnd}',
-                          style: const TextStyle(fontSize: 15, color: Palette.white),
-                        ),
-                        const SizedBox(height: 3),
-                        Text(
-                          provider.travel!.name,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Palette.white),
-                        ),
-                      ],
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '${provider.travel!.dateStart} - ${provider.travel!.dateEnd}',
+                        style: const TextStyle(fontSize: 15, color: Palette.white),
+                      ),
+                      const SizedBox(height: 3),
+                      Text(
+                        provider.travel!.name,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Palette.white),
+                      ),
+                    ],
                   ),
                 ),
               ),         
             ],
           ),
-          Expanded(
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
