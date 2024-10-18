@@ -2,10 +2,10 @@ import 'dart:typed_data';
 
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:path/path.dart' as path;
-import 'package:test_drive/models/budget.dart';
-import 'package:test_drive/models/cover.dart';
-import 'package:test_drive/models/plan.dart';
-import 'package:test_drive/models/travel.dart';
+import 'package:hero/models/budget.dart';
+import 'package:hero/models/cover.dart';
+import 'package:hero/models/plan.dart';
+import 'package:hero/models/travel.dart';
 import 'package:sqflite/sqflite.dart';
 
 Future<Database> _getDatabase() async {
@@ -122,7 +122,7 @@ class TravelService {
     return data;
   }
 
-  Future<List<Map<String, Object?>>> getCurrentYearCosts() async {
+   Future<List<Map<String, Object?>>> getCurrentYearCosts() async {
     final db = await _getDatabase();
     final data = await db.rawQuery('''
       SELECT 
@@ -255,29 +255,51 @@ class TravelService {
     }, where: 'id = ${travel.id}');
 
     for (var i = 0; i < deletedBudgets.length; i++) {
-      db.delete('budgets', where: 'id = ${deletedBudgets[i].id}'); 
+      final id = deletedBudgets[i].id;
+      db.delete('budgets', where: 'id = $id'); 
     }
+
     for (var i = 0; i < deletedPlans.length; i++) {  
-      db.delete('plans', where: 'id = ${deletedPlans[i].id}'); 
+      final id = deletedPlans[i].id;
+      db.delete('plans', where: 'id = $id'); 
     }
 
     for (var i = 0; i < budgets.length; i++) {  
-      db.insert('budgets', {
-        'travel_id': travel.id,
-        'name': budgets[i].name,
-        'estimate': budgets[i].estimate,
-        'price': budgets[i].value,
-      });     
+      if(budgets[i].id == null){
+        db.insert('budgets', {
+          'travel_id': travel.id,
+          'name': budgets[i].name,
+          'estimate': budgets[i].estimate,
+          'price': budgets[i].value,
+        });     
+      }else{
+        db.update('budgets', {
+          'travel_id': travel.id,
+          'name': budgets[i].name,
+          'estimate': budgets[i].estimate,
+          'price': budgets[i].value,
+        }, where: 'id = ${budgets[i].id}');
+      }
     }
 
     for (var i = 0; i < plans.length; i++) {
-      db.insert('plans', {
-        'travel_id': travel.id,
-        'date': plans[i].date,
-        'hour_start': plans[i].hourStart,
-        'description': plans[i].description, 
-        'category': plans[i].category,
-      });
+      if(plans[i].id == null){
+        db.insert('plans', {
+          'travel_id': travel.id,
+          'date': plans[i].date,
+          'hour_start': plans[i].hourStart,
+          'description': plans[i].description, 
+          'category': plans[i].category,
+        });
+      }else{
+        db.update('budgets', {
+          'travel_id': travel.id,
+          'date': plans[i].date,
+          'hour_start': plans[i].hourStart,
+          'description': plans[i].description, 
+          'category': plans[i].category,
+        }, where: 'id = ${plans[i].id}');
+      }
     }
   }
 
