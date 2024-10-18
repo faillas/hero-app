@@ -51,4 +51,15 @@ class ValidationManager {
     return false;
   }
 
+  bool isStartDateBeforeEndDate(DateTime dateStart, DateTime dateEnd) {
+    return dateStart.isBefore(dateEnd);
+  }
+
+  bool isDateInRange(DateTime dateStart, DateTime dateEnd, DateTime date) {
+    return (
+      date.isAtSameMomentAs(dateStart) ||
+      date.isAfter(dateStart)) && (date.isAtSameMomentAs(dateEnd) || date.isBefore(dateEnd)
+    );
+  }
+
 }
