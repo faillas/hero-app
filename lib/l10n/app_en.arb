@@ -27,6 +27,7 @@
   "dataDiInizio": "Start date",
   "dataEOra": "Date and hour",
   "dataInizioFine": "Start - End date",
+  "dataNonCompresa":"Invalid date for travel time period",
   "descrizioneNota": "Note description",
   "dettaglioViaggio":"Travel Detail",
   "doveVuoiAndare": "Where do you want to go?",

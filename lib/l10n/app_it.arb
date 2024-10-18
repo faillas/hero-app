@@ -28,6 +28,7 @@
   "dataDiInizio": "Data di inizio",
   "dataEOra": "Data e ora",
   "dataInizioFine": "Data inizio - fine",
+  "dataNonCompresa":"Data non valida per il periodo di tempo del viaggio",
   "descrizioneNota": "Descrizione nota",
   "dettaglioViaggio":"dettaglio viaggio",
   "doveVuoiAndare": "Dove vuoi andare?",
