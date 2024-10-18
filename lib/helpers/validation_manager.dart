@@ -55,10 +55,13 @@ class ValidationManager {
     return dateStart.isBefore(dateEnd);
   }
 
-  bool isDateInRange(DateTime dateStart, DateTime dateEnd, DateTime date) {
+  bool isDateInRange(String dateStart, String dateEnd, DateTime date) {
+    DateFormat dateFormat = DateFormat("dd/MM/yyyy");
+    DateTime start = dateFormat.parse(dateStart);
+    DateTime end = dateFormat.parse(dateEnd);
     return (
-      date.isAtSameMomentAs(dateStart) ||
-      date.isAfter(dateStart)) && (date.isAtSameMomentAs(dateEnd) || date.isBefore(dateEnd)
+      date.isAtSameMomentAs(start) ||
+      date.isAfter(start)) && (date.isAtSameMomentAs(end) || date.isBefore(end)
     );
   }
 
