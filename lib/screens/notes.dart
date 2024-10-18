@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/helpers/validation_manager.dart';
-import 'package:test_drive/models/note.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/services/note_service.dart';
-import 'package:test_drive/widgets/bottom_menu.dart';
-import 'package:test_drive/widgets/topbar.dart';
+import 'package:hero/helpers/validation_manager.dart';
+import 'package:hero/models/note.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/services/note_service.dart';
+import 'package:hero/widgets/bottom_menu.dart';
+import 'package:hero/widgets/topbar.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 GetIt getIt = GetIt.instance;
@@ -19,12 +19,15 @@ class Notes extends StatefulWidget {
   State<Notes> createState() => _NotesState();
 }
 
-class _NotesState extends State<Notes> {
+class _NotesState extends State<Notes> with SingleTickerProviderStateMixin  {
   ValidationManager validate = getIt.get<ValidationManager>();
   late NoteService service  = getIt.get<NoteService>();
   List _notes = [];
   String selectedType = 'white';
+  String mode = 'create';
   final TextEditingController _controller = TextEditingController();
+  late AnimationController _animationController;
+  late Animation<double> _rotationAnimation;
 
   Future<List> loadNotes() async {
     return _notes = await service.load();
@@ -74,22 +77,63 @@ class _NotesState extends State<Notes> {
     }
   }
 
+  Color colorTextFromType(type) {
+    switch (type) {
+      case 'default':
+        return Colors.white;
+      case 'info':
+        return Colors.black;
+      case 'warning':
+        return Colors.black;
+      case 'danger':
+        return Colors.white;
+      default: return Colors.black;
+    }
+  }
+
   @override
   void initState() {
-    loadNotes();
     super.initState();
+    loadNotes();
+    _animationController = AnimationController(
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
+    _rotationAnimation = Tween<double>(begin: -0.01, end: 0.01).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.easeInOutCubic,
+      ),
+    );
+  }
+
+  void _shakeCards() {
+    _animationController.repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Topbar(title:AppLocalizations.of(context)!.note, father:true),
+      appBar: Topbar(title:AppLocalizations.of(context)!.note, father:true, notes:mode, onSave: (){
+        _shakeCards();
+          setState(() {
+            mode = (mode == 'create') ? 'edit' : 'create';
+          });
+      },),
       body:  Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             // Text input area
-            TextField(
+            (mode == 'create')
+            ?TextField(
               controller: _controller,
               decoration: InputDecoration(
                 hintText: AppLocalizations.of(context)!.descrizioneNota,
@@ -97,9 +141,10 @@ class _NotesState extends State<Notes> {
                 contentPadding: const EdgeInsets.all(8),
               ),
               maxLines: 2,
-            ),
-            const SizedBox(height: 16),
-            Row(
+            ):Container(),
+            (mode == 'create')?const SizedBox(height: 16): Container(),
+            (mode == 'create')
+            ?Row(
               children: [
                 GestureDetector( 
                   onTap:(){
@@ -161,9 +206,10 @@ class _NotesState extends State<Notes> {
                   ),
                   child: Text(AppLocalizations.of(context)!.aggiungi, style: const TextStyle(color: Colors.white),),
                 ),
+                const SizedBox(width: 10,),
               ],
-            ),
-            const Divider(),
+            ): Container(),
+            (mode == 'create')?const Divider(): Container(),
             // Grid of colored note cards
             Expanded(
               child: FutureBuilder(
@@ -172,40 +218,96 @@ class _NotesState extends State<Notes> {
                   ? const Center(child: CircularProgressIndicator())
                   : (_notes.isNotEmpty)
                     ?GridView.builder(
-                          itemCount: _notes.length,
-                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 16,
-                            mainAxisSpacing: 16,
-                          ),
-                          itemBuilder: (_, index) {
-                            return GestureDetector(
-                              onLongPress: ()=>_delete(_notes[index].id),
-                              child: Card(
-                                color: colorFromType(_notes[index].type),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
+                      itemCount: _notes.length,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 16,
+                        mainAxisSpacing: 16,
+                      ),
+                      itemBuilder: (_, index) {
+                        return  (mode == 'create')
+                          ?Card(
+                            color: colorFromType(_notes[index].type),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            elevation: 4,
+                            child: SizedBox(
+                              height: 100,
+                              width: 100,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  _notes[index].description,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(color:colorTextFromType(_notes[index].type) ),
                                 ),
-                                elevation: 4,
-                                child: SizedBox(
+                              ),
+                            ),
+                          )
+                          :RotationTransition(
+                            turns: _rotationAnimation,
+                            child: Card(
+                              color: colorFromType(_notes[index].type),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              elevation: 4,
+                              child: Stack(children: [
+                                SizedBox(
                                   height: 100,
                                   width: 100,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding:
+                                        const EdgeInsets.all(8.0),
                                     child: Text(
                                       _notes[index].description,
                                       overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        color: colorTextFromType(
+                                            _notes[index].type),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            );
-                          },
-                        )
-                        :WarningMessage(message: AppLocalizations.of(context)!.nonCiSonoNote)
-                    )
-
-            ),
+                                Positioned(
+                                  top: -4,
+                                  right: -4,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      // Call delete function
+                                      _delete(_notes[index].id);
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        shape: BoxShape.circle,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black
+                                                .withOpacity(0.2),
+                                            spreadRadius: 2,
+                                            blurRadius: 4,
+                                            offset: const Offset(0, 3),
+                                          ),
+                                        ],
+                                      ),
+                                      child: const Icon(
+                                        Icons.close,
+                                        color: Palette.danger,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],)
+                            ),
+                          ); 
+                        },
+                      )
+                    :WarningMessage(message: AppLocalizations.of(context)!.nonCiSonoNote)
+                  )
+            )            
           ],
         ),
       ),
