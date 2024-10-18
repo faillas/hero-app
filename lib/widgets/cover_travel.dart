@@ -33,7 +33,7 @@ class CoverTravel extends StatefulWidget {
 
 class _CoverTravelState extends State<CoverTravel> {
   FileManager fileManager = getIt.get<FileManager>();
-  late XFile? _selectedImage = null;
+  late XFile? _selectedImage;
 
   Future<void> _pickImage() async {
     final ImagePicker picker = ImagePicker();

@@ -270,7 +270,7 @@ class FileManager {
     final file = File(filePath);
     await file.writeAsBytes(uint8List);
     // Create an XFile from the file path
-    final xFile = XFile(filePath);
+    //final xFile = XFile(filePath);
     return XFile(filePath);
     
   }
