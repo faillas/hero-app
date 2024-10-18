@@ -24,7 +24,7 @@
   "dark": "dark",
   "data": "Data",
   "dataDiFine": "Data di fine",
-  "dataFineMaggioreDataInizio: "La data di fine deve essere maggiore della data di inizio",
+  "dataFineMaggioreDataInizio": "Data di fine deve essere maggiore della data di inizio",
   "dataDiInizio": "Data di inizio",
   "dataEOra": "Data e ora",
   "dataInizioFine": "Data inizio - fine",

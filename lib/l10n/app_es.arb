@@ -23,7 +23,7 @@
   "dark": "Oscuro",
   "data": "Fecha",
   "dataDiFine": "Fecha de fin",
-  "dataFineMaggioreDataInizio: "La fecha de finalización debe ser mayor que la fecha de inicio.",
+  "dataFineMaggioreDataInizio": "La fecha de finalización debe ser mayor que la fecha de inicio.",
   "dataDiInizio": "Fecha de inicio",
   "dataEOra": "Fecha y hora",
   "dataInizioFine": "Fecha inicio - fin",

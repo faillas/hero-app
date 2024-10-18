@@ -23,7 +23,7 @@
   "dark": "Dunkel",
   "data": "Datum",
   "dataDiFine": "Enddatum",
-  "dataFineMaggioreDataInizio: "Das Enddatum muss größer als das Startdatum sein",
+  "dataFineMaggioreDataInizio": "Das Enddatum muss größer als das Startdatum sein",
   "dataDiInizio": "Startdatum",
   "dataEOra": "Datum und Uhrzeit",
   "dataInizioFine": "Start - Enddatum",
