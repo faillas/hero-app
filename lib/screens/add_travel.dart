@@ -1,23 +1,23 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:test_drive/helpers/date_manager.dart';
-import 'package:test_drive/helpers/validation_manager.dart';
-import 'package:test_drive/models/budget.dart';
-import 'package:test_drive/models/cover.dart';
-import 'package:test_drive/models/plan.dart';
-import 'package:test_drive/models/travel.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/services/travel_service.dart';
-import 'package:test_drive/widgets/bottom_menu.dart';
-import 'package:test_drive/widgets/cover_travel.dart';
-import 'package:test_drive/widgets/date_range_input.dart';
-import 'package:test_drive/widgets/input_date.dart';
-import 'package:test_drive/widgets/input_time.dart';
-import 'package:test_drive/widgets/budget_list.dart';
-import 'package:test_drive/widgets/plan_list.dart';
-import 'package:test_drive/widgets/section_header.dart';
-import 'package:test_drive/widgets/select_category.dart';
-import 'package:test_drive/widgets/topbar.dart';
+import 'package:hero/helpers/date_manager.dart';
+import 'package:hero/helpers/validation_manager.dart';
+import 'package:hero/models/budget.dart';
+import 'package:hero/models/cover.dart';
+import 'package:hero/models/plan.dart';
+import 'package:hero/models/travel.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/services/travel_service.dart';
+import 'package:hero/widgets/bottom_menu.dart';
+import 'package:hero/widgets/cover_travel.dart';
+import 'package:hero/widgets/date_range_input.dart';
+import 'package:hero/widgets/input_date.dart';
+import 'package:hero/widgets/input_time.dart';
+import 'package:hero/widgets/budget_list.dart';
+import 'package:hero/widgets/plan_list.dart';
+import 'package:hero/widgets/section_header.dart';
+import 'package:hero/widgets/select_category.dart';
+import 'package:hero/widgets/topbar.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -173,9 +173,19 @@ class _AddTravelState extends State<AddTravel> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           InputDate(onSaveFunction: (DateTime value) {
-                            setState(() {
-                              startDatePlan = value;
-                            });
+                            final valid = validate.isDateInRange(startDate, endDate, value);
+                            if(valid== true){
+                              setState(() {
+                                startDatePlan = value;
+                              });
+                            }else{
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: Palette.danger,
+                                  content: Text(AppLocalizations.of(context)!.dataNonCompresa),
+                                ),
+                              );
+                            }
                           },),  
                           Container(height: 50, color: Theme.of(context).dividerColor, width: 0.5,),   
                           Expanded(child: InputTime(onSaveFunction: (String value) {
