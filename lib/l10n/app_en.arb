@@ -23,6 +23,7 @@
   "dashboard": "dashboard",
   "data": "Date",
   "dataDiFine": "End date",
+  "dataFineMaggioreDataInizio: "The end date must be greater than the start date",
   "dataDiInizio": "Start date",
   "dataEOra": "Date and hour",
   "dataInizioFine": "Start - End date",

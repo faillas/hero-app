@@ -23,6 +23,7 @@
   "dark": "sombre",
   "data": "Date",
   "dataDiFine": "Date de fin",
+  "dataFineMaggioreDataInizio: "La date de fin doit être supérieure à la date de début",
   "dataDiInizio": "Date de début",
   "dataEOra": "Date et heure",
   "dataInizioFine": "Date début - fin",
