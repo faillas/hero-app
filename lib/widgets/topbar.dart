@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/providers/travels_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:hero/palette.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/widgets/section_header.dart';
-import 'package:test_drive/widgets/select_theme.dart';
+import 'package:hero/widgets/select_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 GetIt getIt = GetIt.instance;
@@ -35,47 +33,60 @@ class Topbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<TravelsProvider>(context, listen: true);
 
     void showBottomDialog(dialogContext) {
       showModalBottomSheet(
+        barrierColor: Theme.of(context).primaryColor.withOpacity(0.5),
         backgroundColor: Colors.white,
         context: context,
         isScrollControlled: true,
         useSafeArea: true,
         builder: (BuildContext dialogContext) {
-          return Column(
-            children: [
-              SectionHeader(title:AppLocalizations.of(context)!.impostazioni),
-              SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(AppLocalizations.of(context)!.temaApplicazione, textAlign: TextAlign.left, 
-                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
+          return SizedBox(
+            height: 400,
+            child: Column(
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  color: Palette.info.withOpacity(0.25),
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: Text(
+                        AppLocalizations.of(context)!.impostazioni,
+                        style: const TextStyle(color: Colors.black,fontSize: 20.0, fontWeight: FontWeight.bold),
+                      ),
                     ),
-                    const SelectTheme()
-                  ],
+                  ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: 300,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(AppLocalizations.of(context)!.temaApplicazione, textAlign: TextAlign.left, 
+                          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
+                        ),
+                        const SizedBox(height: 20,),
+                        const SelectTheme()
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           );
         },
       );
     }
 
     return AppBar(
-        leading: (father==false)? IconButton(
-          onPressed: (){ 
-            provider.clearDetail();           
-            Navigator.of(context).pop();
-          },
-          icon: const Icon(Icons.arrow_back, color: Colors.white, size: 30)
-        ): null,
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
         elevation: AppBarTheme.of(context).elevation,
