@@ -3,6 +3,7 @@
 // import 'package:date_range_form_field/date_range_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:intl/intl.dart';
 
 class DateRangeInput extends StatefulWidget {
   DateTimeRange? range;
@@ -23,6 +24,17 @@ class DateRangeInput extends StatefulWidget {
 class _DateRangeInputState extends State<DateRangeInput> {
   DateTimeRange? _selectedRange;
 
+  String getInputLabel(){
+    String label= widget.label; 
+    if(_selectedRange != null){
+      final DateFormat formatter = DateFormat('dd/MM/yyyy');
+      final String startDate = formatter.format(_selectedRange!.start.toLocal());
+      final String endDate = formatter.format(_selectedRange!.end.toLocal());
+      label = '$startDate - $endDate';
+    }
+    return label;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -41,6 +53,8 @@ class _DateRangeInputState extends State<DateRangeInput> {
       initialDate: _selectedRange!.start,
       firstDate: DateTime(2000),
       lastDate: DateTime(2100),
+      barrierColor: Theme.of(context).primaryColor
+      //locale: 
     );
 
     if (startDate == null) return;
@@ -78,9 +92,7 @@ class _DateRangeInputState extends State<DateRangeInput> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              _selectedRange == null
-                  ? widget.label
-                  : '${_selectedRange!.start.toLocal().toString().split(' ')[0]} - ${_selectedRange!.end.toLocal().toString().split(' ')[0]}',
+              getInputLabel(),
               style: const TextStyle(fontSize: 16),
             ),
             Icon(Icons.date_range, color: Theme.of(context).dividerColor,),
