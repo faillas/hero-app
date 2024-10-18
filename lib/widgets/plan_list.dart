@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/helpers/date_manager.dart';
-import 'package:test_drive/helpers/icon_manager.dart';
-import 'package:test_drive/models/plan.dart';
+import 'package:hero/helpers/date_manager.dart';
+import 'package:hero/helpers/icon_manager.dart';
+import 'package:hero/models/plan.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 GetIt getIt = GetIt.instance;
@@ -41,15 +41,15 @@ class _PlanListState extends State<PlanList> {
       itemBuilder: (context, index) {
         final item = widget.items[index];
         return ListTile(
-          leading: CircleAvatar(radius: 16, backgroundColor: Palette.info.withOpacity(0.25), child: iconManager.getIconFromLabel(widget.items[index].category),),
+          leading: CircleAvatar(radius: 16, backgroundColor: Palette.info, child: iconManager.getIconFromLabel(widget.items[index].category),),
           subtitle:Text(
             widget.items[index].description, 
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Theme.of(context).hintColor),
             overflow: TextOverflow.ellipsis,
           ),
           title: Text(
             '${dateManager.formatStringFromDate(widget.items[index].date)} - ${widget.items[index].hourStart}',
-            style: const TextStyle(fontSize: 12),
+            style: TextStyle(fontSize: 12, color: Theme.of(context).hintColor),
           ),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/models/slide.dart';
-import 'package:test_drive/palette.dart';
+import 'package:hero/models/slide.dart';
+import 'package:hero/palette.dart';
 
 
 final List<Slide> slides = [

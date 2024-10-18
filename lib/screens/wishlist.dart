@@ -1,13 +1,13 @@
 
 import 'package:flutter/material.dart';
-import 'package:test_drive/helpers/validation_manager.dart';
-import 'package:test_drive/models/wish_item.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/services/wishlist_service.dart';
-import 'package:test_drive/widgets/bottom_menu.dart';
-import 'package:test_drive/widgets/topbar.dart';
+import 'package:hero/helpers/validation_manager.dart';
+import 'package:hero/models/wish_item.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/services/wishlist_service.dart';
+import 'package:hero/widgets/bottom_menu.dart';
+import 'package:hero/widgets/topbar.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 GetIt getIt = GetIt.instance;
@@ -132,9 +132,14 @@ class _WishListState extends State<WishList> {
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   decoration: _wishlist[index].checked == 1 ? TextDecoration.lineThrough : TextDecoration.none,
+                                  color: Theme.of(context).hintColor,
+                                  decorationColor: Theme.of(context).hintColor
                                 ),
                               ),
                               trailing: Checkbox(
+                                activeColor: Theme.of(context).highlightColor,
+                                checkColor: Theme.of(context).primaryColor,
+                                side: BorderSide(color:Theme.of(context).hintColor),
                                 value: _wishlist[index].checked == 0 ? false :true,
                                 onChanged: (bool? value) {
                                   if(value == true){

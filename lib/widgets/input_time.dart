@@ -17,6 +17,8 @@ class _InputTimeState extends State<InputTime> {
     final TimeOfDay? pickedTime = await showTimePicker(
       context: context,
       initialTime: _selectedTime ?? TimeOfDay.now(),
+      barrierColor: Theme.of(context).primaryColor,
+      helpText:AppLocalizations.of(context)!.tempo,
     );
     if (pickedTime != null && pickedTime != _selectedTime) {
       setState(() {

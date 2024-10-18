@@ -1,7 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:test_drive/helpers/date_manager.dart';
-import 'package:test_drive/palette.dart';
+import 'package:hero/helpers/date_manager.dart';
+import 'package:hero/palette.dart';
 import 'package:get_it/get_it.dart';
 
 GetIt getIt = GetIt.instance;

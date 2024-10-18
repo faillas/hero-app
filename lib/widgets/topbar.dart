@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hero/palette.dart';
+import 'package:hero/providers/travels_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hero/widgets/section_header.dart';
+import 'package:hero/widgets/select_theme.dart';
 import 'package:hero/widgets/select_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

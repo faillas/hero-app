@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/models/budget.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/widgets/warning_message.dart';
+import 'package:hero/models/budget.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BudgetList extends StatefulWidget {
@@ -33,7 +33,7 @@ class _BudgetListState extends State<BudgetList> {
               children: [
                 SizedBox(width:100, child: Text(
                   widget.items[index].name, 
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).hintColor),
                   overflow: TextOverflow.ellipsis,
                 ),),
                 Row(
@@ -41,16 +41,18 @@ class _BudgetListState extends State<BudgetList> {
                     SizedBox(width:80,child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '${widget.items[index].estimate}€',
+                        widget.items[index].estimate,
                         overflow: TextOverflow.ellipsis,
+                        style: TextStyle(color: Theme.of(context).hintColor),
                       ),
                     )),
-                    Container(height: 15, color: Colors.black.withOpacity(0.5), width: 0.5,),
+                    Container(height: 15, color: Theme.of(context).dividerColor, width: 0.5,),
                     SizedBox(width:80,child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '${widget.items[index].value}€',
+                        widget.items[index].value,
                         overflow: TextOverflow.ellipsis,
+                        style: TextStyle(color: Theme.of(context).hintColor),
                       ),
                     )),
                   ],

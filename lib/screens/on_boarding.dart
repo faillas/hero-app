@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/services/config_service.dart';
-import 'package:test_drive/widgets/select_theme.dart';
+import 'package:hero/services/config_service.dart';
+import 'package:hero/widgets/select_theme.dart';
 import '../palette.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

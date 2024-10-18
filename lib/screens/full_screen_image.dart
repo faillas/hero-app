@@ -1,9 +1,9 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/widgets/cover_travel.dart';
-import 'package:test_drive/widgets/topbar.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/widgets/cover_travel.dart';
+import 'package:hero/widgets/topbar.dart';
 
 
 class FullScreenImage extends StatelessWidget {

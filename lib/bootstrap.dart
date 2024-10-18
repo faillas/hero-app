@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:test_drive/helpers/date_manager.dart';
-import 'package:test_drive/helpers/file_manager.dart';
-import 'package:test_drive/helpers/icon_manager.dart';
-import 'package:test_drive/helpers/validation_manager.dart';
+import 'package:hero/helpers/date_manager.dart';
+import 'package:hero/helpers/file_manager.dart';
+import 'package:hero/helpers/icon_manager.dart';
+import 'package:hero/helpers/validation_manager.dart';
 
-import 'package:test_drive/main.dart';
+import 'package:hero/main.dart';
 import 'package:get_it/get_it.dart';
-import 'package:test_drive/providers/theme_provider.dart';
-import 'package:test_drive/providers/travels_provider.dart';
-import 'package:test_drive/services/config_service.dart';
-import 'package:test_drive/services/note_service.dart';
-import 'package:test_drive/services/travel_service.dart';
-import 'package:test_drive/services/wishlist_service.dart';
+import 'package:hero/providers/theme_provider.dart';
+import 'package:hero/providers/travels_provider.dart';
+import 'package:hero/services/config_service.dart';
+import 'package:hero/services/note_service.dart';
+import 'package:hero/services/travel_service.dart';
+import 'package:hero/services/wishlist_service.dart';
 
 GetIt getIt = GetIt.instance;
 

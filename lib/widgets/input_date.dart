@@ -24,13 +24,14 @@ class _InputDateState extends State<InputDate> {
 
   Future<void> _selectDate(BuildContext context) async {
     final locale = Localizations.localeOf(context); 
+    final locale = Localizations.localeOf(context); 
     final DateTime? pickedDate = await showDatePicker(
       context: context,
       initialDate: _selectedDate ?? DateTime.now(),
       helpText:AppLocalizations.of(context)!.data,
+      barrierColor: Theme.of(context).primaryColor
       firstDate: DateTime(2000),
       lastDate: DateTime(2101),
-      barrierColor: Theme.of(context).primaryColor,
       locale: locale
     );
     widget.onSaveFunction!(pickedDate);
@@ -66,3 +67,4 @@ class _InputDateState extends State<InputDate> {
     );
   }
 }
+

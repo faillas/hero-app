@@ -1,8 +1,8 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dart:io';
 import 'package:hero/helpers/file_manager.dart';
+import 'dart:io';
 import 'package:hero/palette.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hero/widgets/warning_message.dart';

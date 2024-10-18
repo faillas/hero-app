@@ -1,27 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:test_drive/palette.dart';
-import 'package:test_drive/widgets/slide_dashboard.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/widgets/slide_dashboard.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
-class DashboardSlider extends StatelessWidget {
-  const DashboardSlider({super.key});
-  
+class GridAppActions extends StatelessWidget {
+  const GridAppActions({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-
-    return CarouselSlider(
-      options: CarouselOptions(
-        height: 200.0,
-        autoPlay: false,
-        enlargeCenterPage: true,
-        aspectRatio: 2.0,
-      ),
-      items: [
-        SlideDashboard(
+    return SizedBox(height:300, child:  GridView.count(
+                crossAxisCount: 1,
+                crossAxisSpacing: 10.0,
+                mainAxisSpacing: 10.0,
+                scrollDirection: Axis.horizontal,
+                children: [ 
+                  SlideDashboard(
           text: AppLocalizations.of(context)!.pianificaNuoviViaggi,
           icon: const Icon(Icons.add_box_outlined, size:60, color: Colors.black),
           background: Palette.accent,
@@ -48,9 +41,9 @@ class DashboardSlider extends StatelessWidget {
           background: Palette.successColor,
           textColor: Palette.white,
           url:'/notes'
-        )
-      ]
-      
-    );
+        )               
+                ]
+              ),
+            );
   }
 }

@@ -5,7 +5,14 @@ import 'package:hero/palette.dart';
 import 'package:hero/services/note_service.dart';
 import 'package:hero/widgets/bottom_menu.dart';
 import 'package:hero/widgets/topbar.dart';
+import 'package:hero/helpers/validation_manager.dart';
+import 'package:hero/models/note.dart';
+import 'package:hero/palette.dart';
+import 'package:hero/services/note_service.dart';
+import 'package:hero/widgets/bottom_menu.dart';
+import 'package:hero/widgets/topbar.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hero/widgets/warning_message.dart';
 import 'package:hero/widgets/warning_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -74,6 +81,20 @@ class _NotesState extends State<Notes> with SingleTickerProviderStateMixin  {
       case 'danger':
         return Palette.danger;
       default: return Palette.white;
+    }
+  }
+
+  Color colorTextFromType(type) {
+    switch (type) {
+      case 'default':
+        return Colors.white;
+      case 'info':
+        return Colors.black;
+      case 'warning':
+        return Colors.black;
+      case 'danger':
+        return Colors.white;
+      default: return Colors.black;
     }
   }
 
