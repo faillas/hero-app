@@ -13,13 +13,25 @@ class InputDate extends StatefulWidget {
 class _InputDateState extends State<InputDate> {
   DateTime? _selectedDate;
 
+  String getInputLabel(context){
+    String label= AppLocalizations.of(context)!.data; 
+    if(_selectedDate != null){
+      final DateFormat formatter = DateFormat('dd/MM/yyyy');
+      label = formatter.format(_selectedDate!.toLocal());
+    }
+    return label;
+  }
+
   Future<void> _selectDate(BuildContext context) async {
+    final locale = Localizations.localeOf(context); 
     final DateTime? pickedDate = await showDatePicker(
       context: context,
       initialDate: _selectedDate ?? DateTime.now(),
-      
+      helpText:AppLocalizations.of(context)!.data,
       firstDate: DateTime(2000),
       lastDate: DateTime(2101),
+      barrierColor: Theme.of(context).primaryColor,
+      locale: locale
     );
     widget.onSaveFunction!(pickedDate);
     if (pickedDate != null && pickedDate != _selectedDate) {
@@ -42,9 +54,7 @@ class _InputDateState extends State<InputDate> {
             style:const ButtonStyle(alignment: Alignment.centerLeft),
             onPressed: () =>_selectDate(context),
             child: Text(
-              _selectedDate == null
-                  ? AppLocalizations.of(context)!.data
-                  : DateFormat.yMMMd().format(_selectedDate!),
+              getInputLabel(context),
               style: TextStyle(fontSize: 16, color: Theme.of(context).hintColor),
             ),
           ),
