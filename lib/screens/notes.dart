@@ -224,7 +224,7 @@ class _NotesState extends State<Notes> with SingleTickerProviderStateMixin  {
                     ?GridView.builder(
                       itemCount: _notes.length,
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
+                        crossAxisCount: 3,
                         crossAxisSpacing: 16,
                         mainAxisSpacing: 16,
                       ),
@@ -236,19 +236,16 @@ class _NotesState extends State<Notes> with SingleTickerProviderStateMixin  {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             elevation: 4,
-                            child: SizedBox(
-                              height: 100,
-                              width: 100,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                            child: SingleChildScrollView(
+                              child:Padding(
+                                padding: const EdgeInsets.all(16.0),
                                 child: Text(
                                   _notes[index].description,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(color:colorTextFromType(_notes[index].type) ),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 20, color:colorTextFromType(_notes[index].type) ),
                                 ),
                               ),
-                            ),
-                          )
+                                                        ))
                           :RotationTransition(
                             turns: _rotationAnimation,
                             child: Card(

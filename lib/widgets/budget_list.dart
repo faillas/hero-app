@@ -31,7 +31,7 @@ class _BudgetListState extends State<BudgetList> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(width:100, child: Text(
+                Expanded(child: Text(
                   widget.items[index].name, 
                   style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).hintColor),
                   overflow: TextOverflow.ellipsis,
@@ -42,6 +42,7 @@ class _BudgetListState extends State<BudgetList> {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         widget.items[index].estimate,
+                        textAlign: TextAlign.end,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(color: Theme.of(context).hintColor),
                       ),
@@ -50,6 +51,7 @@ class _BudgetListState extends State<BudgetList> {
                     SizedBox(width:80,child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
+                        textAlign: TextAlign.end,
                         widget.items[index].value,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(color: Theme.of(context).hintColor),
