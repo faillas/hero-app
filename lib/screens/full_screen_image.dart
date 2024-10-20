@@ -19,14 +19,12 @@ class FullScreenImage extends StatelessWidget {
       body: Container(
         color: Palette.neutral,
         height: MediaQuery.of(context).size.height *0.9,
-        child: Expanded(
-          child: CoverTravel(
-            detail: true,
-            fullScreen: true,
-            cover: image,
-            travel: title,
-            onSaveFunction: null,
-          ),
+        child: CoverTravel(
+          detail: true,
+          fullScreen: true,
+          cover: image,
+          travel: title,
+          onSaveFunction: null,
         ),
       ),
     );
