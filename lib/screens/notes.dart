@@ -137,8 +137,12 @@ class _NotesState extends State<Notes> with SingleTickerProviderStateMixin  {
               controller: _controller,
               decoration: InputDecoration(
                 hintText: AppLocalizations.of(context)!.descrizioneNota,
+                hintStyle: TextStyle(color:Theme.of(context).hintColor),
                 border: const OutlineInputBorder(),
                 contentPadding: const EdgeInsets.all(8),
+              ),
+              style: TextStyle(
+                color: Theme.of(context).hintColor,
               ),
               maxLines: 2,
             ):Container(),

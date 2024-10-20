@@ -316,6 +316,7 @@ class _AddTravelState extends State<AddTravel> {
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(color:Theme.of(context).hintColor),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(
@@ -334,6 +335,7 @@ class _AddTravelState extends State<AddTravel> {
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(color:Theme.of(context).hintColor),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(

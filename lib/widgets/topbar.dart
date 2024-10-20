@@ -38,11 +38,11 @@ class Topbar extends StatelessWidget implements PreferredSizeWidget {
 
     void showBottomDialog(dialogContext) {
       showModalBottomSheet(
-        barrierColor: Theme.of(context).primaryColor.withOpacity(0.5),
+        barrierColor: Colors.transparent,
         backgroundColor: Colors.white,
         context: context,
         isScrollControlled: true,
-        useSafeArea: true,
+        useSafeArea: false,
         builder: (BuildContext dialogContext) {
           return SizedBox(
             height: 400,
@@ -50,7 +50,10 @@ class Topbar extends StatelessWidget implements PreferredSizeWidget {
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  color: Palette.info.withOpacity(0.25),
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(topLeft:Radius.circular(25), topRight: Radius.circular(25)),
+                    color: Palette.info.withOpacity(0.25),
+                  ),
                   child: Center(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
