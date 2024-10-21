@@ -57,44 +57,59 @@ class _DateRangeInputState extends State<DateRangeInput> {
     final DateTime? startDate = await showDatePicker(
       context: context,
       helpText:AppLocalizations.of(context)!.dataDiInizio,
-      initialDate: _selectedRange!.start,
+      initialDate: (_selectedRange!.start != null) ? _selectedRange!.start: DateTime.now(),
       firstDate: DateTime(2000),
       lastDate: DateTime(2100),
       barrierColor: Theme.of(context).primaryColor,
       locale: locale
     );
 
-    if (startDate == null) return;
-
-    // Select end date after start date is picked
-    final DateTime? endDate = await showDatePicker(
-      context: context,
-      helpText:AppLocalizations.of(context)!.dataDiFine,
-      initialDate: _selectedRange!.end,
-      firstDate: startDate,
-      lastDate: DateTime(2100),
-      barrierColor: Theme.of(context).primaryColor,
-      locale: locale
-    );
-
-    if (endDate == null) return;
-
-    // validation
-    final valid = validate.isStartDateBeforeEndDate(startDate, endDate);
-    if(valid== true){
-      // Update the range and pass it to the parent widget
-      setState(() {
-        _selectedRange = DateTimeRange(start: startDate, end: endDate);
-        widget.onSaveFunction!(_selectedRange);
-      });
-    }else{
+    if (startDate == null){
       ScaffoldMessenger.of(context).showSnackBar(
          SnackBar(
           backgroundColor: Palette.danger,
           content: Text(AppLocalizations.of(context)!.dataFineMaggioreDataInizio),
         ),
       );
+    }else{
+      final DateTime? endDate = await showDatePicker(
+        context: context,
+        helpText:AppLocalizations.of(context)!.dataDiFine,
+        initialDate: (_selectedRange!.end != null) ? _selectedRange!.end: DateTime.now().add(const Duration(days: 5)),
+        firstDate: startDate,
+        lastDate: DateTime(2100),
+        barrierColor: Theme.of(context).primaryColor,
+        locale: locale
+      );
+
+      if (endDate == null){
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Palette.danger,
+            content: Text(AppLocalizations.of(context)!.dataFineMaggioreDataInizio),
+          ),
+        );
+      }else{
+        // validation
+        final valid = validate.isStartDateBeforeEndDate(startDate, endDate);
+        if(valid== true){
+          // Update the range and pass it to the parent widget
+          setState(() {
+            _selectedRange = DateTimeRange(start: startDate, end: endDate);
+            widget.onSaveFunction!(_selectedRange);
+          });
+        }else{
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Palette.danger,
+              content: Text(AppLocalizations.of(context)!.dataFineMaggioreDataInizio),
+            ),
+          );
+        }
+      }
+
     }
+
   }
 
   @override

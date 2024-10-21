@@ -98,7 +98,9 @@ class _MyHomePageState extends State<MyHomePage> {
             scaffoldBackgroundColor: Colors.white,
             dialogBackgroundColor:Palette.white,
             highlightColor: Palette.primary,
+            focusColor: Palette.primary,
             hintColor: Colors.black,
+            hoverColor: Palette.primary,
              appBarTheme: const AppBarTheme(
               backgroundColor: Colors.blue, // AppBar background for light theme
               foregroundColor: Colors.white, // AppBar text/icon color for light theme
@@ -122,6 +124,8 @@ class _MyHomePageState extends State<MyHomePage> {
             scaffoldBackgroundColor: const Color.fromARGB(255, 7, 38, 83),
             hintColor: Colors.white,
             highlightColor: Palette.accent,
+            focusColor: Palette.accent,
+            hoverColor: Palette.accent,
             appBarTheme: const AppBarTheme(
               backgroundColor: Color.fromARGB(255, 7, 38, 83), // AppBar background for dark theme
               foregroundColor: Colors.white, // AppBar text/icon color for dark theme
