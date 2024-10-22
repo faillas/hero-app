@@ -302,7 +302,6 @@ class FileManager {
 
   String getSvg(String? label) {
     final category = categories.where((cat)=> cat.label == label?.toLowerCase()).firstOrNull;
-    print(category);
     if(category != null){
       return category.rawSvg;
     }
