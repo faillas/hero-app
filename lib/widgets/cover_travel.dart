@@ -49,9 +49,8 @@ class _CoverTravelState extends State<CoverTravel> {
           _selectedImage = image;
         });
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Unsupported image format: $extension')),
-        );
+        showError('image');
+       
       }
     }
   }
@@ -131,5 +130,19 @@ class _CoverTravelState extends State<CoverTravel> {
           ),
       ],
     );
+  }
+
+  void showError(type){
+    switch (type) {
+      case 'image':
+       ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Unsupported image format')
+          )
+        );      
+        break;
+      default:
+    }
+
   }
 }
