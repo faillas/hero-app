@@ -224,7 +224,7 @@ class _NotesState extends State<Notes> with SingleTickerProviderStateMixin  {
                     ?GridView.builder(
                       itemCount: _notes.length,
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
+                        crossAxisCount: 2,
                         crossAxisSpacing: 16,
                         mainAxisSpacing: 16,
                       ),
