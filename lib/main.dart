@@ -101,7 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
             focusColor: Palette.primary,
             hintColor: Colors.black,
             hoverColor: Palette.primary,
-             appBarTheme: const AppBarTheme(
+            iconTheme: const IconThemeData(color: Colors.black ),
+            appBarTheme: const AppBarTheme(
               backgroundColor: Colors.blue, // AppBar background for light theme
               foregroundColor: Colors.white, // AppBar text/icon color for light theme
             ),
@@ -114,10 +115,21 @@ class _MyHomePageState extends State<MyHomePage> {
               bodyLarge: TextStyle(color: Colors.black), // Text color for light theme
               bodyMedium: TextStyle(color: Colors.black),
             ),
+            datePickerTheme: DatePickerThemeData(
+              backgroundColor: Palette.white, // Background color for DateRangePicker in light theme
+              rangePickerBackgroundColor: Palette.white,
+              headerBackgroundColor: Palette.white, // Header color of the DateRangePicker
+              yearBackgroundColor: WidgetStateProperty.all(Palette.primary), // Year dropdown background
+              rangePickerHeaderForegroundColor:Colors.black, // Text color in header
+              dayForegroundColor: WidgetStateProperty.all(Colors.black), // Day text color
+              todayForegroundColor: WidgetStateProperty.all(Palette.primary), // Color of today's date
+              surfaceTintColor: Colors.black, // Hover text color for light theme
+            ),
             pageTransitionsTheme: PageTransitionsTheme(builders: {
               TargetPlatform.android: CustomPageTransitionBuilder(),
               TargetPlatform.iOS: CustomPageTransitionBuilder(),
             })),
+          
           darkTheme: ThemeData(    
             primaryColor: const Color.fromARGB(255, 7, 38, 83), 
             dividerColor: Colors.white.withOpacity(0.5),// Dark primary color
@@ -126,6 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
             highlightColor: Palette.accent,
             focusColor: Palette.accent,
             hoverColor: Palette.accent,
+            iconTheme: const IconThemeData(color: Colors.white ),
             appBarTheme: const AppBarTheme(
               backgroundColor: Color.fromARGB(255, 7, 38, 83), // AppBar background for dark theme
               foregroundColor: Colors.white, // AppBar text/icon color for dark theme
@@ -138,6 +151,17 @@ class _MyHomePageState extends State<MyHomePage> {
             textTheme: const TextTheme(
               bodyLarge: TextStyle(color: Colors.white), // Text color for dark theme
               bodyMedium: TextStyle(color: Colors.white),
+            ),
+            datePickerTheme: DatePickerThemeData(
+              backgroundColor: const Color.fromARGB(255, 7, 38, 83), // Background color for DateRangePicker in light theme
+              rangePickerBackgroundColor: const Color.fromARGB(255, 7, 38, 83),
+              headerBackgroundColor: const Color.fromARGB(255, 7, 38, 83), // Header color of the DateRangePicker
+              yearBackgroundColor: WidgetStateProperty.all(Palette.primary), // Year dropdown background
+              rangePickerHeaderForegroundColor:Colors.white, // Text color in header
+              dayForegroundColor: WidgetStateProperty.all(Colors.black), // Day text color
+              todayForegroundColor: WidgetStateProperty.all(Palette.primary), // Color of today's date
+              surfaceTintColor: Colors.black,
+              dividerColor: Colors.white, // Hover text color for light theme
             ),
             pageTransitionsTheme: PageTransitionsTheme(builders: {
               TargetPlatform.android: CustomPageTransitionBuilder(),
