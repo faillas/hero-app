@@ -34,8 +34,8 @@ class CostsState extends State<Costs> {
     for (var row in widget.budgets) {   
       if(count <8){
         //  print('Travel: ${row['travel_name']}, Total Budget: ${row['total_price']}, Total Budget: ${row['total_estimate']}');
-        var estimate = row['total_estimate'] != null ? row['total_estimate'] : 0.0;
-        var real = row['total_price'] != null ? row['total_price'] : 0.0;
+        var estimate = row['total_estimate'] ?? 0.0;
+        var real = row['total_price'] ?? 0.0;
 
         final barGroup = makeGroupData(0,estimate, real);
         items.add(barGroup);
