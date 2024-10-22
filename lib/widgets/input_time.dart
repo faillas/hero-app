@@ -25,13 +25,16 @@ class _InputTimeState extends State<InputTime> {
         _selectedTime = pickedTime;
       });
 
-       // Convert TimeOfDay to HH:mm format
-      final localizations = MaterialLocalizations.of(context);
-      final String formattedTime = localizations.formatTimeOfDay(pickedTime, alwaysUse24HourFormat: true);
-
+      final formattedTime = getFormattedTime(pickedTime);
       // Send the formatted time string to the onSaveFunction
       widget.onSaveFunction?.call(formattedTime);
     }
+  }
+
+  String getFormattedTime(pickedTime){
+    final localizations = MaterialLocalizations.of(context);
+    final String formattedTime = localizations.formatTimeOfDay(pickedTime, alwaysUse24HourFormat: true);
+    return formattedTime;
   }
 
 
