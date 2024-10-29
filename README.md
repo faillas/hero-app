@@ -41,14 +41,14 @@ flutter pub get
 flutter build apk --release
 flutter install
 ```
+## Colori
 
-## TO-DO LIST
-
-* dates range input validations
-* theme management
-* refactoring hero ---> hero
-* recheck landing page
-* messa in produzione
+| Colore            | Esadecimale |
+|-------------------|-------------|
+| dark              | #325082     |
+| light accent      | #4a62ff     |
+| dark accent       | #e8a392     |
+| info              | #00bae2     |
 
 ## Traduzioni
 
