@@ -137,8 +137,12 @@ class _NotesState extends State<Notes> with SingleTickerProviderStateMixin  {
               controller: _controller,
               decoration: InputDecoration(
                 hintText: AppLocalizations.of(context)!.descrizioneNota,
+                hintStyle: TextStyle(color:Theme.of(context).hintColor),
                 border: const OutlineInputBorder(),
                 contentPadding: const EdgeInsets.all(8),
+              ),
+              style: TextStyle(
+                color: Theme.of(context).hintColor,
               ),
               maxLines: 2,
             ):Container(),
@@ -232,19 +236,16 @@ class _NotesState extends State<Notes> with SingleTickerProviderStateMixin  {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             elevation: 4,
-                            child: SizedBox(
-                              height: 100,
-                              width: 100,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                            child: SingleChildScrollView(
+                              child:Padding(
+                                padding: const EdgeInsets.all(16.0),
                                 child: Text(
                                   _notes[index].description,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(color:colorTextFromType(_notes[index].type) ),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 20, color:colorTextFromType(_notes[index].type) ),
                                 ),
                               ),
-                            ),
-                          )
+                                                        ))
                           :RotationTransition(
                             turns: _rotationAnimation,
                             child: Card(
@@ -253,32 +254,38 @@ class _NotesState extends State<Notes> with SingleTickerProviderStateMixin  {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               elevation: 4,
-                              child: Stack(children: [
+                              child: Stack(
+                                children: [
                                 SizedBox(
-                                  height: 100,
-                                  width: 100,
+                                  height: MediaQuery.of(context).size.height,
+                                  width: MediaQuery.of(context).size.width,
                                   child: Padding(
                                     padding:
                                         const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      _notes[index].description,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        color: colorTextFromType(
-                                            _notes[index].type),
+                                    child: SingleChildScrollView(
+                                      child: Text(
+                                        _notes[index].description,
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          color: colorTextFromType(
+                                              _notes[index].type),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                                 Positioned(
-                                  top: -4,
-                                  right: -4,
+                                  top: 2,
+                                  right: 2,
                                   child: GestureDetector(
                                     onTap: () {
                                       // Call delete function
                                       _delete(_notes[index].id);
                                     },
                                     child: Container(
+                                      width: 50,
+                                      height: 50,
                                       padding: const EdgeInsets.all(4),
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -295,6 +302,7 @@ class _NotesState extends State<Notes> with SingleTickerProviderStateMixin  {
                                       ),
                                       child: const Icon(
                                         Icons.close,
+                                        size: 30,
                                         color: Palette.danger,
                                       ),
                                     ),

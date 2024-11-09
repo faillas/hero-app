@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:hero/helpers/validation_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get_it/get_it.dart';
+
+GetIt getIt = GetIt.instance;
 
 class InputDate extends StatefulWidget {
+  final String start;
+  final String end;
   final Function? onSaveFunction;
-  const InputDate({super.key, required this.onSaveFunction});
+  final Function? onError;
+  const InputDate({super.key,required this.start, required this.end, required this.onSaveFunction, required this.onError});
 
   @override
   State<InputDate> createState() => _InputDateState();
 }
 
 class _InputDateState extends State<InputDate> {
+  ValidationManager validate = getIt.get<ValidationManager>();
   DateTime? _selectedDate;
 
   String getInputLabel(context){
@@ -33,11 +41,22 @@ class _InputDateState extends State<InputDate> {
       lastDate: DateTime(2101),
       locale: locale
     );
-    widget.onSaveFunction!(pickedDate);
     if (pickedDate != null && pickedDate != _selectedDate) {
-      setState(() {
-        _selectedDate = pickedDate;
-      });
+      final valid = validate.isDateInRange(widget.start, widget.end, pickedDate);
+      if(valid == true){
+        setState(() {
+          _selectedDate = pickedDate;
+        });
+        widget.onSaveFunction!(pickedDate);
+      }else{
+        _selectedDate = null;
+        setState(() {});
+        widget.onError!();
+      }
+    }else{
+      _selectedDate = null;
+      setState(() {});
+      widget.onError!;
     }
   }
 

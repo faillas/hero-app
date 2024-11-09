@@ -1,8 +1,7 @@
 import 'dart:io';
-import 'dart:typed_data';
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:cross_file/cross_file.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
@@ -138,8 +137,8 @@ class FileManager {
 
   Future<void> generateCostsList(Travel travel, List<Budget> budgets) async {
     final pdf = pw.Document();
-    var TOTestimate = 0.0;
-    var TOTreal = 0.0;
+    var estimateTOT = 0.0;
+    var realTOT = 0.0;
 
     pdf.addPage(
       pw.Page(
@@ -187,8 +186,8 @@ class FileManager {
                     ]
                   ),
                   ...budgets.map((budget) {
-                    TOTreal = TOTreal+ double.parse(budget.value);
-                    TOTestimate = TOTestimate+ double.parse(budget.estimate);
+                    realTOT = realTOT+ double.parse(budget.value);
+                    estimateTOT = estimateTOT+ double.parse(budget.estimate);
                     return pw.TableRow(
                       verticalAlignment: pw.TableCellVerticalAlignment.middle,
                       decoration: const pw.BoxDecoration(
@@ -232,11 +231,11 @@ class FileManager {
                       ),
                       pw.Padding(
                         padding: const pw.EdgeInsets.all(8.0),
-                        child: pw.Text(TOTestimate.toString()), // Sample data for Preventivo
+                        child: pw.Text(estimateTOT.toString()), // Sample data for Preventivo
                       ),
                       pw.Padding(
                         padding: const pw.EdgeInsets.all(8.0),
-                        child: pw.Text(TOTreal.toString()), // Sample data for Reale
+                        child: pw.Text(realTOT.toString()), // Sample data for Reale
                       ),
                     ],
                   )                              
@@ -301,7 +300,7 @@ class FileManager {
   }
 
   String getSvg(String? label) {
-    final category = categories.where((cat)=> cat.label == label).firstOrNull;
+    final category = categories.where((cat)=> cat.label == label?.toLowerCase()).firstOrNull;
     if(category != null){
       return category.rawSvg;
     }

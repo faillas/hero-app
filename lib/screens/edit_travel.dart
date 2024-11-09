@@ -203,21 +203,20 @@ class _EditTravelState extends State<EditTravel> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            InputDate(onSaveFunction: (DateTime value) {
-                              final valid = validate.isDateInRange(startDate, endDate, value);
-                              if(valid== true){
+                            InputDate(start:startDate, end:endDate, onSaveFunction: (DateTime value) {
                                 setState(() {
                                   startDatePlan = value;
                                 });
-                              }else{
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    backgroundColor: Palette.danger,
-                                    content: Text(AppLocalizations.of(context)!.dataNonCompresa),
-                                  ),
-                                );
-                              }
-                            },),  
+                              },
+                              onError: (){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: Palette.danger,
+                                  content: Text(AppLocalizations.of(context)!.dataNonCompresa),
+                                ),
+                              );
+                            },
+                            ),  
                             Container(height: 50, color: Theme.of(context).dividerColor, width: 0.5,),   
                             Expanded(child: InputTime(onSaveFunction: (String value) {
                               setState(() {
@@ -360,6 +359,7 @@ class _EditTravelState extends State<EditTravel> {
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(color:Theme.of(context).hintColor),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(
@@ -378,6 +378,7 @@ class _EditTravelState extends State<EditTravel> {
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(color:Theme.of(context).hintColor),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(

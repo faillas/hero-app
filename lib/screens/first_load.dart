@@ -12,10 +12,10 @@ class FirstLoadChecker extends StatefulWidget {
   const FirstLoadChecker({super.key});
 
   @override
-  _FirstLoadCheckerState createState() => _FirstLoadCheckerState();
+  FirstLoadCheckerState createState() => FirstLoadCheckerState();
 }
 
-class _FirstLoadCheckerState extends State<FirstLoadChecker> {
+class FirstLoadCheckerState extends State<FirstLoadChecker> {
   late ConfigService configservice  = getIt.get<ConfigService>();
   late List configurations = []; 
   bool firstLoad = false;

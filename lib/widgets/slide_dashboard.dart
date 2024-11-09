@@ -23,7 +23,7 @@ class SlideDashboard extends StatelessWidget {
       },
       child: ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(4.0)),
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           height: 200,
           child: Card(

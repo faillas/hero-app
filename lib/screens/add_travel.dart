@@ -172,21 +172,20 @@ class _AddTravelState extends State<AddTravel> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          InputDate(onSaveFunction: (DateTime value) {
-                            final valid = validate.isDateInRange(startDate, endDate, value);
-                            if(valid== true){
-                              setState(() {
-                                startDatePlan = value;
-                              });
-                            }else{
+                          InputDate(start:startDate, end:endDate, onSaveFunction: (DateTime value) {
+                            setState(() {
+                              startDatePlan = value;
+                            });
+                          },
+                            onError: (){
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   backgroundColor: Palette.danger,
                                   content: Text(AppLocalizations.of(context)!.dataNonCompresa),
                                 ),
                               );
-                            }
-                          },),  
+                            },
+                          ),  
                           Container(height: 50, color: Theme.of(context).dividerColor, width: 0.5,),   
                           Expanded(child: InputTime(onSaveFunction: (String value) {
                             setState(() {
@@ -316,6 +315,7 @@ class _AddTravelState extends State<AddTravel> {
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(color:Theme.of(context).hintColor),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(
@@ -334,6 +334,7 @@ class _AddTravelState extends State<AddTravel> {
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(color:Theme.of(context).hintColor),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(
