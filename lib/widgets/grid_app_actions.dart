@@ -14,19 +14,19 @@ class GridAppActions extends StatelessWidget {
                 mainAxisSpacing: 10.0,
                 scrollDirection: Axis.horizontal,
                 children: [ 
-                  SlideDashboard(
-          text: AppLocalizations.of(context)!.pianificaNuoviViaggi,
-          icon: const Icon(Icons.add_box_outlined, size:60, color: Colors.black),
-          background: Palette.accent,
-          textColor: Colors.black,
-          url:'/add-travel'
-        ),
         SlideDashboard(
           text: AppLocalizations.of(context)!.vediTuttiITuoiViaggi,
           icon: const Icon(Icons.flight, size:60, color: Palette.contentInfo),
           background: Palette.info,
           textColor: Palette.contentInfo,
           url:'/destinations-card-view'
+        ),
+        SlideDashboard(
+          text: AppLocalizations.of(context)!.pianificaNuoviViaggi,
+          icon: const Icon(Icons.add_box_outlined, size:60, color: Colors.black),
+          background: Palette.accent,
+          textColor: Colors.black,
+          url:'/add-travel'
         ),
         SlideDashboard(
           text: AppLocalizations.of(context)!.creaUnaLista,

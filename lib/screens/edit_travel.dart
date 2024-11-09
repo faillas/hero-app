@@ -360,6 +360,7 @@ class _EditTravelState extends State<EditTravel> {
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(color:Theme.of(context).hintColor),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(
@@ -378,6 +379,7 @@ class _EditTravelState extends State<EditTravel> {
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(color:Theme.of(context).hintColor),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(

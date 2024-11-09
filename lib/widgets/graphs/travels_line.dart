@@ -43,7 +43,7 @@ class _TravelsLineState extends State<TravelsLine> {
               bottom: 12,
             ),
             child: LineChart(
-              showAvg ? avgData() : mainData(),
+              showAvg ? avgData() : mainData(context),
             ),
           ),
         ),
@@ -77,6 +77,7 @@ class _TravelsLineState extends State<TravelsLine> {
       'current': 0.0,
       'previous': 0.0,
       'remote': 0.0,
+      'percentage': 0.0,
     };
     for (var item in widget.travels) {
       final dateStart= item.dateStart;
@@ -91,6 +92,24 @@ class _TravelsLineState extends State<TravelsLine> {
         result['remote'] = result['remote'] +1.0;
       }
     }
+    if(result['previous'] < 0){
+      result['percentage'] =  (result['current'] * 100) / result['previous'];
+    }else{
+      result['percentage'] =  result['current'] * 100;
+    }
+    if(result['percentage'] > 0){
+      result['percentage'] =  '+${result['percentage']}';
+    }else{
+      result['percentage'] = '-${result['percentage']}';
+    }
+
+    if(result['previous'] > result['current']){
+      maxTravel = result['previous'];
+    }else{
+      maxTravel = result['current'];
+    }
+
+
     return result;
   }
 
@@ -103,16 +122,17 @@ class _TravelsLineState extends State<TravelsLine> {
     int currentYear = DateTime.now().year;
     int previousYear = currentYear - 1;
     int remoteYear = currentYear -2;
+    final counters = getCounters();
 
     switch (value.toInt()) {
-      case 2:
-        text = Text(remoteYear.toString(), style: style);
-        break;
-      case 5:
-        text = Text(previousYear.toString(), style: style);
-        break;
+      // case 2:
+      //   text = Text('', style: style);
+      //   break;
+      // case 5:
+      //   text = Text('', style: style);
+      //   break;
       case 8:
-        text = Text(currentYear.toString(), style: style);
+        text = Text('$currentYear (${counters['percentage']}%)', style: style);
         break;
       default:
         text = const Text('', style: style);
@@ -152,23 +172,23 @@ class _TravelsLineState extends State<TravelsLine> {
     return Text(text, style: style, textAlign: TextAlign.left);
   }
 
-  LineChartData mainData() {
+  LineChartData mainData(BuildContext context) {
     final counters = getCounters();
     return LineChartData(
       gridData: FlGridData(
         show: true,
-        drawVerticalLine: true,
+        drawVerticalLine: false,
         horizontalInterval: 1,
         verticalInterval: 1,
         getDrawingHorizontalLine: (value) {
-          return const FlLine(
-            color: Palette.white,
+          return FlLine(
+            color: Theme.of(context).primaryColor,
             strokeWidth: 1,
           );
         },
         getDrawingVerticalLine: (value) {
-          return const FlLine(
-            color: Palette.white,
+          return FlLine(
+            color: Theme.of(context).primaryColor,
             strokeWidth: 1,
           );
         },
@@ -191,7 +211,7 @@ class _TravelsLineState extends State<TravelsLine> {
         ),
         leftTitles: AxisTitles(
           sideTitles: SideTitles(
-            showTitles: true,
+            showTitles: false,
             interval: 1,
             getTitlesWidget: leftTitleWidgets,
             reservedSize: 42,
@@ -199,23 +219,23 @@ class _TravelsLineState extends State<TravelsLine> {
         ),
       ),
       borderData: FlBorderData(
-        show: true,
+        show: false,
         border: Border.all(color: Palette.white),
       ),
       minX: 0,
       maxX: 9,
       minY: 0,
-      maxY: 9,
+      maxY: maxTravel,
       lineBarsData: [
         LineChartBarData(
           spots: [
-            FlSpot(0, counters['remote']),
-            FlSpot(2, counters['remote']),//remote
-            FlSpot(5, counters['previous']),//previous
+            FlSpot(0, counters['previous']),
+            FlSpot(2, counters['previous']),//remote
+            FlSpot(5, counters['current']),//previous
             FlSpot(8, counters['current']),//current
             FlSpot(9, counters['current']),
           ],
-          isCurved: true,
+          isCurved: false,
           gradient: LinearGradient(
             colors: gradientColors,
           ),
@@ -302,7 +322,7 @@ class _TravelsLineState extends State<TravelsLine> {
             FlSpot(9.5, 3.44),
             FlSpot(11, 3.44),
           ],
-          isCurved: true,
+          isCurved: false,
           gradient: LinearGradient(
             colors: [
               ColorTween(begin: gradientColors[0], end: gradientColors[1])

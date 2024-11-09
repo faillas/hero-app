@@ -175,7 +175,7 @@ class CostsState extends State<Costs> {
     );
   }
 
-  Widget bottomTitles(double value, TitleMeta meta) {
+  Widget bottomTitles( double value, TitleMeta meta) {
     List<String> travelTitles = [];
     var count = 0;
     widget.budgets.forEach((row) {   
@@ -193,8 +193,8 @@ class CostsState extends State<Costs> {
 
     final Widget text = Text(
       travelTitles[value.toInt()],
-      style: const TextStyle(
-        color: Color(0xff7589a2),
+      style: TextStyle(
+        color: Theme.of(context).hintColor,
         fontWeight: FontWeight.bold,
         fontSize: 14,
       ),
