@@ -117,17 +117,17 @@ class _MyHomePageState extends State<MyHomePage> {
               TargetPlatform.iOS: CustomPageTransitionBuilder(),
             })),
           darkTheme: ThemeData(    
-            primaryColor: const Color.fromARGB(255, 7, 38, 83), 
+            primaryColor: Palette.dark, 
             dividerColor: Colors.white.withOpacity(0.5),// Dark primary color
-            scaffoldBackgroundColor: const Color.fromARGB(255, 7, 38, 83),
+            scaffoldBackgroundColor: Palette.dark,
             hintColor: Colors.white,
             highlightColor: Palette.accent,
             appBarTheme: const AppBarTheme(
-              backgroundColor: Color.fromARGB(255, 7, 38, 83), // AppBar background for dark theme
+              backgroundColor: Palette.dark, // AppBar background for dark theme
               foregroundColor: Colors.white, // AppBar text/icon color for dark theme
             ),
             bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-              backgroundColor: Color.fromARGB(255, 7, 38, 83), // Dark theme background
+              backgroundColor: Palette.dark, // Dark theme background
               selectedItemColor: Colors.yellow, // Dark theme selected item color
               unselectedItemColor: Colors.grey, // Dark theme unselected item color
             ),

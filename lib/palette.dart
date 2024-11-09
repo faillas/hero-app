@@ -17,6 +17,22 @@ class Palette {
     },
   );
 
+  static const MaterialColor dark =  MaterialColor(
+    0xff325082, // 0% comes in here, this will be color picked if no shade is selected when defining a Color property which doesn’t require a swatch.
+    <int, Color>{
+      50:  Color(0xff325082),
+      100: Color(0xff2d4875),
+      200: Color(0xff284068),
+      300: Color(0xff23385b),
+      400: Color(0xff1e304e),
+      500: Color(0xff192841),
+      600: Color(0xff142034),
+      700: Color(0xff0f1827),
+      800: Color(0xff0a101a),
+      900: Color(0xff05080d),
+    },
+  );
+
   static const MaterialColor primary = MaterialColor(
     0xff337AB7, // 0% comes in here, this will be color picked if no shade is selected when defining a Color property which doesn’t require a swatch.
     <int, Color>{
