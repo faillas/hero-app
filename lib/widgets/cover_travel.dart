@@ -33,7 +33,7 @@ class CoverTravel extends StatefulWidget {
 
 class _CoverTravelState extends State<CoverTravel> {
   FileManager fileManager = getIt.get<FileManager>();
-  late XFile? _selectedImage;
+  late XFile? _selectedImage = null;
 
   Future<void> _pickImage() async {
     final ImagePicker picker = ImagePicker();
@@ -97,8 +97,8 @@ class _CoverTravelState extends State<CoverTravel> {
                         } else if (snapshot.hasData) {
                           return Image.file(
                             File(snapshot.data!.path),
-                            fit: widget.fullScreen == true ? BoxFit.contain : BoxFit.cover,
                             width: double.infinity,
+                             height: double.infinity,
                           );
                         } else {
                           return Center(
@@ -107,8 +107,8 @@ class _CoverTravelState extends State<CoverTravel> {
                       }))
               : Image.file(
                   File(_selectedImage!.path),
-                  fit: widget.fullScreen == true ? BoxFit.contain : BoxFit.cover,
                   width: double.infinity,
+                  height: double.infinity,
                 ),
         ),
         // Only show the edit button if detail is false

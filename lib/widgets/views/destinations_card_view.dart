@@ -73,6 +73,7 @@ class _DestinationsCardViewState extends State<DestinationsCardView> {
                         detail: true,
                         cover: widget.travels[index].image,
                         travel: widget.travels[index].name,
+                        fullScreen: true,
                         onSaveFunction: null,
                       )
                       :Icon(

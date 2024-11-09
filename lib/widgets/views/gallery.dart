@@ -43,6 +43,7 @@ class Gallery extends StatelessWidget {
             detail: true,
             cover: travels[index].image,
             travel: travels[index].name,
+            fullScreen: true,
             onSaveFunction: null,
           ),
         );
