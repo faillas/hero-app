@@ -8,8 +8,6 @@ Applicazione per i viaggi con le seguenti funzionalità:
 * registrare lista di cose da fare
 * vedere statistiche sui viaggi
 
-> da valutare anche il diario di viaggio con scrittura a mano
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
